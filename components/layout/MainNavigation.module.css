@@ -1,7 +1,7 @@
 /** @format */
 
 .header {
-	background-color: #f8fbfe;
+	background-color: #1b1c1d;
 	box-shadow: 10px 15px 15px #00000029;
 	width: 100%;
 	position: sticky;
@@ -11,7 +11,7 @@
 }
 
 .header .container {
-	background-color: #f8fbfe;
+	background-color: #1b1c1d;
 	display: flex;
 	gap: 2rem;
 	padding: 0 5%;
@@ -25,7 +25,7 @@
 }
 
 .logo {
-	width: 15.625rem;
+	width: 16.825rem;
 	height: 3.125rem;
 	min-width: 15.625rem;
 	min-height: 3.125rem;
@@ -35,7 +35,7 @@
 
 @media (max-width: 568px) {
 	.logo {
-		width: 12.625rem;
+		width: 12.825rem;
 		height: 2.125rem;
 		min-width: 12.625rem;
 		min-height: 2.125rem;
@@ -72,9 +72,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100%;
+	border-radius: 20px;
+	min-height: 60%;
 	text-decoration: none;
-	color: #4b4b4d;
+	color: #cfe2e4;
 	transition: 0.3s;
 	-webkit-transition: 0.3s;
 	-moz-transition: 0.3s;
@@ -88,7 +89,7 @@ nav a.worklink {
 
 .nav a:hover,
 .nav a#active {
-	background: #e8e8e8;
+	background: #524f4f;
 }
 
 @media (max-width: 768px) {
@@ -134,7 +135,7 @@ nav a.worklink {
 	min-width: 15.75rem;
 	width: 15.75rem;
 	padding: 1.2rem;
-	background-color: #f8fbfe;
+	background-color: #cfe2e4;
 	border-radius: 6px;
 	transition: transform 0.3s;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);

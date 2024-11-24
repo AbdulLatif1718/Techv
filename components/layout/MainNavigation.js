@@ -55,7 +55,7 @@ const MainNavigation = () => {
 								<a>
 									<Image
 										className='logo-img'
-										src='/images/mainlogo.png'
+										src='/images/mylogo.png'
 										alt='LOGO'
 										layout='fill'
 										objectFit='contain'
@@ -89,7 +89,7 @@ const MainNavigation = () => {
 										</a>
 									</Link>
 								</li>
-								<li>
+								{/* <li>
 									<Link href='/product'>
 										<a
 											className={classes.worklink}
@@ -101,7 +101,7 @@ const MainNavigation = () => {
 											Products
 										</a>
 									</Link>
-								</li>
+								</li> */}
 
 								<li>
 									<Link href='/contact'>
@@ -134,6 +134,7 @@ const MainNavigation = () => {
 							<ul>
 								<li>
 									<MenuIcon
+										className="text-white"
 										onClick={() => {
 											SetBurgerMenuStatus(true);
 										}}

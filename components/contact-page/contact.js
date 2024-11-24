@@ -1,274 +1,329 @@
 /** @format */
 
-import React, { memo, useRef } from "react";
-import Fade from "react-reveal/Fade";
-
+import React, { memo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-	setShowGreeceLanguageState,
-	setShowEnglishLanguageState,
-	selectLanguage,
-} from "../../features/language/languageSlice";
-
-import classes from "./Contact.module.css";
+import { selectLanguage } from "../../features/language/languageSlice";
 
 const Contact = () => {
-	const dispatch = useDispatch();
-	const englishLanguage = useSelector(selectLanguage);
+  const dispatch = useDispatch();
+  const englishLanguage = useSelector(selectLanguage);
 
-	const firstNameReference = useRef();
-	const lastNameReference = useRef(null);
-	const phoneNumberReference = useRef(null);
-	const emailReference = useRef(null);
-	const companyNameReference = useRef(null);
-	const textReference = useRef(null);
+  // Form State to handle progress, submission, and which form to display
+  const [progress, setProgress] = useState(0);
+  const [activeForm, setActiveForm] = useState("partnership");
 
-	const submitFormHandler = (event) => {
-		event.preventDefault();
-		const enteredFirstName = firstNameReference.current.value;
-		const enteredLastName = lastNameReference.current.value;
-		const enteredPhoneNumber = phoneNumberReference.current.value;
-		const enteredEmail = emailReference.current.value;
-		const enteredCompanyName = companyNameReference.current.value;
-		const enteredText = textReference.current.value;
+  const firstNameReference = useRef();
+  const lastNameReference = useRef(null);
+  const phoneNumberReference = useRef(null);
+  const emailReference = useRef(null);
+  const companyNameReference = useRef(null);
+  const textReference = useRef(null);
 
-		console.log(
-			"enteredFirstName ",
-			enteredFirstName,
-			"enteredLastName ",
-			enteredLastName,
-			" enteredPhoneNumber ",
-			enteredPhoneNumber,
-			" enteredEmail ",
-			enteredEmail,
-			" enteredCompanyName ",
-			enteredCompanyName,
-			" enteredText ",
-			enteredText,
-		);
+  const submitFormHandler = (event) => {
+    event.preventDefault();
+    const enteredFirstName = firstNameReference.current.value;
+    const enteredLastName = lastNameReference.current.value;
+    const enteredPhoneNumber = phoneNumberReference.current.value;
+    const enteredEmail = emailReference.current.value;
+    const enteredCompanyName = companyNameReference.current.value;
+    const enteredText = textReference.current.value;
 
-		firstNameReference.current.value = "";
-		lastNameReference.current.value = "";
-		phoneNumberReference.current.value = "";
-		emailReference.current.value = "";
-		companyNameReference.current.value = "";
-		textReference.current.value = "";
-	};
+    console.log(
+      "Form submitted with:",
+      "First Name: ", enteredFirstName,
+      "Last Name: ", enteredLastName,
+      "Phone Number: ", enteredPhoneNumber,
+      "Email: ", enteredEmail,
+      "Company Name: ", enteredCompanyName,
+      "Message: ", enteredText
+    );
 
-	return (
-		<>
-			{englishLanguage && (
-				<section className={classes.contact} id='contact'>
-					<div className={classes["content-wrapper"]}>
-						<h1>Get In Touch</h1>
-						<p>
-							Whether you&apos;re interested in pricing, a 30 day trial,
-							or a demo of the dashboard, we&apos;d be delighted to open
-							a dialogue.
-						</p>
-						<p>
-							Complete the form below and we&apos;ll be in touch as soon
-							as we can.
-						</p>
+    // Reset form fields and progress bar
+    firstNameReference.current.value = "";
+    lastNameReference.current.value = "";
+    phoneNumberReference.current.value = "";
+    emailReference.current.value = "";
+    companyNameReference.current.value = "";
+    textReference.current.value = "";
+    setProgress(0);
+  };
 
-						<div className={classes["form-wrapper"]}>
-							<form onSubmit={submitFormHandler}>
-								<div className={classes["namesContent"]}>
-									<label htmlFor='firstName'> </label>
-									<input
-										ref={firstNameReference}
-										style={{ marginRight: "1rem" }}
-										placeholder='First Name:'
-										type='text'
-										id='firstName'
-										name='firstName'
-										autoComplete='firstName'
-										minLength='2'
-										required
-										className={classes.input}
-									/>
+  return (
+    <>
+      {englishLanguage && (
+        <>
+          {/* Navigation Bar to switch between forms */}
+          <nav className="flex justify-center space-x-8 py-4 bg-gray-200">
+            <button
+              onClick={() => setActiveForm("partnership")}
+              className={`text-lg font-medium ${activeForm === "partnership" ? "text-blue-600" : "text-gray-600"}`}
+            >
+              Partnership
+            </button>
+            <button
+              onClick={() => setActiveForm("volunteering")}
+              className={`text-lg font-medium ${activeForm === "volunteering" ? "text-blue-600" : "text-gray-600"}`}
+            >
+              Volunteering
+            </button>
+            <button
+              onClick={() => setActiveForm("learning")}
+              className={`text-lg font-medium ${activeForm === "learning" ? "text-blue-600" : "text-gray-600"}`}
+            >
+              Learning
+            </button>
+          </nav>
 
-									<label htmlFor='lastName'> </label>
-									<input
-										ref={lastNameReference}
-										className={classes.input}
-										placeholder='Last Name:'
-										type='text'
-										id='lastName'
-										name='lastName'
-										autoComplete='lastName'
-										minLength='2'
-										required
-									/>
-								</div>
-								<label htmlFor='companyName'> </label>
-								<input
-									ref={companyNameReference}
-									placeholder='Company name:'
-									className={classes.input}
-									type='text'
-									id='companyName'
-									name='companyName'
-									autoComplete='companyName'
-									minLength='2'
-									required
-								/>
+          {/* Form Content - Only show the active form */}
+          {activeForm === "partnership" && (
+            <section className="py-20">
+              <div className="max-w-4xl mx-auto px-4">
+                <h1 className="text-4xl font-bold text-center mb-6">Partner with TechVerge Africa</h1>
+                <p className="text-lg text-center mb-8 max-w-3xl mx-auto">
+                  Join us in empowering Africa&apos;s youth through technology. If you&apos;re interested in a partnership, fill out the form below.
+                </p>
+                <form
+                  onSubmit={submitFormHandler}
+                  className="space-y-8 bg-white p-8 rounded-lg shadow-xl"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <input
+                      ref={firstNameReference}
+                      placeholder="First Name"
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      minLength="2"
+                      required
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out"
+                    />
+                    <input
+                      ref={lastNameReference}
+                      placeholder="Last Name"
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      minLength="2"
+                      required
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out"
+                    />
+                  </div>
 
-								<label htmlFor='number'> </label>
-								<input
-									placeholder='Phone number'
-									ref={phoneNumberReference}
-									className={classes.input}
-									type='number'
-									id='number'
-									name='number'
-									autoComplete='number'
-									required
-								/>
+                  <input
+                    ref={companyNameReference}
+                    placeholder="Company Name"
+                    type="text"
+                    id="companyName"
+                    name="companyName"
+                    minLength="2"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out"
+                  />
 
-								<label htmlFor='email'> </label>
-								<input
-									placeholder='Email address'
-									ref={emailReference}
-									type='email'
-									id='email'
-									name='email'
-									maxLength='20'
-									minLength='8'
-									autoComplete='email'
-									required
-									className={classes.input}
-								/>
+                  <input
+                    ref={phoneNumberReference}
+                    placeholder="Phone Number"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out"
+                  />
 
-								<textarea
-									maxLength='500'
-									minLength='10'
-									ref={textReference}
-									rows='4'
-									cols='50'
-									name='comment'
-									required></textarea>
+                  <input
+                    ref={emailReference}
+                    placeholder="Email Address"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out"
+                  />
 
-								<button
-									className={classes.button}
-									type='submit'
-									name='submit'
-									id='submit-form'>
-									Submit
-								</button>
-							</form>
-						</div>
-					</div>
-				</section>
-			)}
+                  <textarea
+                    ref={textReference}
+                    placeholder="Tell us about your partnership idea..."
+                    rows="4"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out"
+                  ></textarea>
 
-			{/* Greece */}
-			{!englishLanguage && (
-				<section className={classes.contact} id='contact'>
-					<div className={classes["content-wrapper"]}>
-						<h1>Επικοινωνήστε Μαζί Μας </h1>
-						<p>
-							Εάν ενδιαφέρεστε για την τιμή κάποιου προϊόντος ή θα θέλατε
-							μια δοκιμή 30 ημερών, θα είμασταν χαρούμενοι να έρθουμε σε
-							επικοινωνία μαζί σας.
-						</p>
-						<p>
-							Συμπληρώστε την παρακάτω φόρμα και θα έρθουμε σε επαφή μαζί
-							σας το συντομότερο δυνατό.
-						</p>
+                  {/* Progress Bar */}
+                  <div className="w-full h-2 bg-gray-200 rounded-full mb-6">
+                    <div
+                      className="h-2 bg-blue-600 rounded-full transition-all ease-in-out"
+                      style={{ width: `${progress}%` }}
+                    ></div>
+                  </div>
 
-						<div className={classes["form-wrapper"]}>
-							<form onSubmit={submitFormHandler}>
-								<div className={classes["namesContent"]}>
-									<label htmlFor='firstName'> </label>
-									<input
-										ref={firstNameReference}
-										style={{ marginRight: "1rem" }}
-										placeholder='First Name:'
-										type='text'
-										id='firstName'
-										name='firstName'
-										autoComplete='firstName'
-										minLength='2'
-										required
-										className={classes.input}
-									/>
+                  <button
+                    onClick={() => setProgress(100)} // Mock progress completion
+                    className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all duration-300"
+                    type="submit"
+                  >
+                    Submit Partnership
+                  </button>
+                </form>
+              </div>
+            </section>
+          )}
 
-									<label htmlFor='lastName'> </label>
-									<input
-										ref={lastNameReference}
-										className={classes.input}
-										placeholder='Last Name:'
-										type='text'
-										id='lastName'
-										name='lastName'
-										autoComplete='lastName'
-										minLength='2'
-										required
-									/>
-								</div>
-								<label htmlFor='companyName'> </label>
-								<input
-									ref={companyNameReference}
-									placeholder='Company name:'
-									className={classes.input}
-									type='text'
-									id='companyName'
-									name='companyName'
-									autoComplete='companyName'
-									minLength='2'
-									required
-								/>
+          {activeForm === "volunteering" && (
+            <section className="py-20">
+              <div className="max-w-4xl mx-auto px-4">
+                <h1 className="text-4xl font-bold text-center mb-6">Volunteer with TechVerge Africa</h1>
+                <p className="text-lg text-center mb-8 max-w-3xl mx-auto">
+                  Want to help change lives? Join us in our mission by volunteering. Fill out the form below to get started.
+                </p>
+                <form
+                  onSubmit={submitFormHandler}
+                  className="space-y-8 bg-white p-8 rounded-lg shadow-xl"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <input
+                      ref={firstNameReference}
+                      placeholder="First Name"
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      minLength="2"
+                      required
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all ease-in-out"
+                    />
+                    <input
+                      ref={lastNameReference}
+                      placeholder="Last Name"
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      minLength="2"
+                      required
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all ease-in-out"
+                    />
+                  </div>
 
-								<label htmlFor='number'> </label>
-								<input
-									placeholder='Phone number'
-									ref={phoneNumberReference}
-									className={classes.input}
-									type='number'
-									id='number'
-									name='number'
-									autoComplete='number'
-									required
-								/>
+                  <input
+                    ref={phoneNumberReference}
+                    placeholder="Phone Number"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all ease-in-out"
+                  />
 
-								<label htmlFor='email'> </label>
-								<input
-									placeholder='Email address'
-									ref={emailReference}
-									type='email'
-									id='email'
-									name='email'
-									maxLength='20'
-									minLength='8'
-									autoComplete='email'
-									required
-									className={classes.input}
-								/>
+                  <input
+                    ref={emailReference}
+                    placeholder="Email Address"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all ease-in-out"
+                  />
 
-								<textarea
-									maxLength='500'
-									minLength='10'
-									ref={textReference}
-									rows='4'
-									cols='50'
-									name='comment'
-									required></textarea>
+                  <textarea
+                    ref={textReference}
+                    placeholder="Why do you want to volunteer with us?"
+                    rows="4"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all ease-in-out"
+                  ></textarea>
 
-								<button
-									className={classes.button}
-									type='submit'
-									name='submit'
-									id='submit-form'>
-									Υποβολή
-								</button>
-							</form>
-						</div>
-					</div>
-				</section>
-			)}
-		</>
-	);
+                  {/* Progress Bar */}
+                  <div className="w-full h-2 bg-gray-200 rounded-full mb-6">
+                    <div
+                      className="h-2 bg-orange-600 rounded-full transition-all ease-in-out"
+                      style={{ width: `${progress}%` }}
+                    ></div>
+                  </div>
+
+                  <button
+                    onClick={() => setProgress(100)} // Mock progress completion
+                    className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-all duration-300"
+                    type="submit"
+                  >
+                    Submit Volunteering Application
+                  </button>
+                </form>
+              </div>
+            </section>
+          )}
+
+          {activeForm === "learning" && (
+            <section className="py-20">
+              <div className="max-w-4xl mx-auto px-4">
+                <h1 className="text-4xl font-bold text-center mb-6">Learn with TechVerge Africa</h1>
+                <p className="text-lg text-center mb-8 max-w-3xl mx-auto">
+                  Ready to upskill? Let us know what you&apos;d like to learn and how we can help you achieve your goals.
+                </p>
+                <form
+                  onSubmit={submitFormHandler}
+                  className="space-y-8 bg-white p-8 rounded-lg shadow-xl"
+                >
+                  <input
+                    ref={firstNameReference}
+                    placeholder="First Name"
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    minLength="2"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all ease-in-out"
+                  />
+
+                  <input
+                    ref={lastNameReference}
+                    placeholder="Last Name"
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    minLength="2"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all ease-in-out"
+                  />
+
+                  <input
+                    ref={emailReference}
+                    placeholder="Email Address"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all ease-in-out"
+                  />
+
+                  <textarea
+                    ref={textReference}
+                    placeholder="What would you like to learn?"
+                    rows="4"
+                    required
+                    className="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all ease-in-out"
+                  ></textarea>
+
+                  {/* Progress Bar */}
+                  <div className="w-full h-2 bg-gray-200 rounded-full mb-6">
+                    <div
+                      className="h-2 bg-teal-600 rounded-full transition-all ease-in-out"
+                      style={{ width: `${progress}%` }}
+                    ></div>
+                  </div>
+
+                  <button
+                    onClick={() => setProgress(100)} // Mock progress completion
+                    className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition-all duration-300"
+                    type="submit"
+                  >
+                    Submit Learning Interest
+                  </button>
+                </form>
+              </div>
+            </section>
+          )}
+        </>
+      )}
+    </>
+  );
 };
 
 export default memo(Contact);

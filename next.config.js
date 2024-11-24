@@ -1,10 +1,19 @@
-/** @format */
-
 module.exports = {
-	reactStrictMode: true,
-
-	// react: {
-	// 	useSuspense: false,
-	// 	wait: true,
-	// },
-};
+	images: {
+	  remotePatterns: [
+		{
+		  protocol: 'https',
+		  hostname: 'media.licdn.com',
+		  port: '',
+		  pathname: '/dms/image/v2/**',
+		},
+		{
+		  protocol: 'https',
+		  hostname: 'via.placeholder.com',
+		  port: '',
+		  pathname: '/**',
+		},
+	  ],
+	},
+  };
+  
