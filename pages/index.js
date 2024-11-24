@@ -9,16 +9,16 @@ export default function Home() {
 	return (
 		<Fragment>
 			<Head>
-				<title>Abaton Electronics</title>
+				<title>TechVerge Africa</title>
 				<meta
 					name='viewport'
 					content='initial-scale=1.0, width=device-width'
 				/>
 				<meta
 					name='description'
-					content='Abaton Electronics, a company specializing in automation s, robotics, creating electrical constructions and installing security systems.'
+					content='TechVerge Africa is a startup focused on empowering African youth through accessible technology education. We aim to bridge the gap between talent and opportunity, helping young minds develop skills, build tech solutions, and drive positive change.'
 				/>
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/favicon1.ico' />
 			</Head>
 
 			<HomePageComponent />
