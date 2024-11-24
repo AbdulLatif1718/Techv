@@ -1,11 +1,10 @@
 /** @format */
 
-import { memo, React } from "react";
-import CloseIcon from "@material-ui/icons/Close";
+import { memo } from "react";
+import { AiOutlineClose } from "react-icons/ai"; // Close icon from React Icons
 import Link from "next/link";
-import { IconButton } from "@material-ui/core";
-
 import { useDispatch, useSelector } from "react-redux";
+
 import {
 	setShowGreeceLanguageState,
 	setShowEnglishLanguageState,
@@ -38,42 +37,28 @@ const SideBar = ({ burgerMenuStatus, SetBurgerMenuStatus }) => {
 								? "translateX(100%) "
 								: "translateX(0%)",
 						}}>
-						<IconButton>
-							<CloseIcon
-								onClick={() => {
-									SetBurgerMenuStatus(false);
-								}}
-							/>
-						</IconButton>
+						{/* Close Button */}
+						<button
+							onClick={() => SetBurgerMenuStatus(false)}
+							className={classes.closeButton}>
+							<AiOutlineClose size={24} />
+						</button>
+
+						{/* Menu Items */}
 						{englishLanguage && (
 							<ul>
-								<li
-									onClick={() => {
-										SetBurgerMenuStatus(false);
-									}}>
+								<li onClick={() => SetBurgerMenuStatus(false)}>
 									<Link href='/'>Home</Link>
 								</li>
-
-								<li
-									onClick={() => {
-										SetBurgerMenuStatus(false);
-									}}>
+								<li onClick={() => SetBurgerMenuStatus(false)}>
 									<Link href='/about-us'>About us</Link>
 								</li>
-								<li
-									onClick={() => {
-										SetBurgerMenuStatus(false);
-									}}>
+								<li onClick={() => SetBurgerMenuStatus(false)}>
 									<Link href='/product'>Products</Link>
 								</li>
-
-								<li
-									onClick={() => {
-										SetBurgerMenuStatus(false);
-									}}>
+								<li onClick={() => SetBurgerMenuStatus(false)}>
 									<Link href='/contact'>Contact</Link>
 								</li>
-
 								<li className='select'>
 									<select
 										required
@@ -84,48 +69,27 @@ const SideBar = ({ burgerMenuStatus, SetBurgerMenuStatus }) => {
 										<option selected disabled>
 											English
 										</option>
-
-										<option
-											onClick={() => {
-												showGreeceLanguage();
-												SetBurgerMenuStatus(false);
-											}}>
-											Greek
-										</option>
+										<option>Greek</option>
 									</select>
 								</li>
 							</ul>
 						)}
 
+						{/* Menu Items in Greek */}
 						{!englishLanguage && (
 							<ul>
-								<li
-									onClick={() => {
-										SetBurgerMenuStatus(false);
-									}}>
-									<Link href='/'> Αρχική</Link>
+								<li onClick={() => SetBurgerMenuStatus(false)}>
+									<Link href='/'>Αρχική</Link>
 								</li>
-
-								<li
-									onClick={() => {
-										SetBurgerMenuStatus(false);
-									}}>
+								<li onClick={() => SetBurgerMenuStatus(false)}>
 									<Link href='/about-us'>Για εμάς</Link>
 								</li>
-								<li
-									onClick={() => {
-										SetBurgerMenuStatus(false);
-									}}>
+								<li onClick={() => SetBurgerMenuStatus(false)}>
 									<Link href='/product'>Προϊόντα</Link>
 								</li>
-
-								<li
-									onClick={() => {
-										SetBurgerMenuStatus(false);
-									}}>
-									<Link href='/contact'> Επικοινωνία</Link>
+								<li onClick={() => SetBurgerMenuStatus(false)}>
+									<Link href='/contact'>Επικοινωνία</Link>
 								</li>
-
 								<li className='select'>
 									<select
 										required
@@ -136,13 +100,7 @@ const SideBar = ({ burgerMenuStatus, SetBurgerMenuStatus }) => {
 										<option selected disabled>
 											Greek
 										</option>
-										<option
-											onClick={() => {
-												showEnglishLanguage();
-												SetBurgerMenuStatus(false);
-											}}>
-											English
-										</option>
+										<option>English</option>
 									</select>
 								</li>
 							</ul>
