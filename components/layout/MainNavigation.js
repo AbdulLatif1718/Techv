@@ -1,8 +1,8 @@
+// MainNavigation.js
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FiMenu } from "react-icons/fi";
-import { AiOutlineClose } from "react-icons/ai";
 import { memo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -11,7 +11,7 @@ import {
   selectLanguage,
 } from "../../features/language/languageSlice";
 
-import SideBar from "./sideBar";
+import SideBar from "./sideBar"; // Ensure correct import
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
@@ -31,11 +31,12 @@ const MainNavigation = () => {
 
   return (
     <>
+      {/* Main Navigation - English */}
       {englishLanguage && (
         <header className={classes.header}>
           <SideBar
             burgerMenuStatus={burgerMenuStatus}
-            setBurgerMenuStatus={setBurgerMenuStatus}
+            setBurgerMenuStatus={setBurgerMenuStatus} // Ensure this is passed correctly
             showGreeceLanguage={showGreeceLanguage}
             showEnglishLanguage={showEnglishLanguage}
             englishLanguage={englishLanguage}
@@ -111,7 +112,7 @@ const MainNavigation = () => {
         </header>
       )}
 
-      {/* Similar adjustments for the Greek version */}
+      {/* Similar for Greek Version */}
     </>
   );
 };
