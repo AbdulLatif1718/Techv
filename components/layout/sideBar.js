@@ -38,7 +38,7 @@ const SideBar = ({ burgerMenuStatus, setBurgerMenuStatus }) => {
 					>
 						{/* Close Button */}
 						<button
-							onClick={() => setBurgerMenuStatus(false)} // Correct function name here
+							onClick={() => setBurgerMenuStatus(false)} 
 							className={classes.closeButton}
 						>
 							<AiOutlineClose size={24} />
@@ -53,9 +53,9 @@ const SideBar = ({ burgerMenuStatus, setBurgerMenuStatus }) => {
 								<li onClick={() => setBurgerMenuStatus(false)}>
 									<Link href="/about-us">About us</Link>
 								</li>
-								<li onClick={() => setBurgerMenuStatus(false)}>
+								{/* <li onClick={() => setBurgerMenuStatus(false)}>
 									<Link href="/product">Products</Link>
-								</li>
+								</li> */}
 								<li onClick={() => setBurgerMenuStatus(false)}>
 									<Link href="/contact">Contact</Link>
 								</li>
