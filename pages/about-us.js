@@ -53,12 +53,12 @@ const AboutPage = () => {
 						{[
 							{
 								name: 'Sulley Abdul Latif',
-								role: 'Founder & CEO',
+								role: 'Co-founder & CEO',
 								image: '/path/to/sulley-image.jpg', // Replace with Sulley's image
 							},
 							{
 								name: 'Abdul-Moomin Is-Haq',
-								role: 'CTO',
+								role: 'Co-founder & CTO',
 								image: '/path/to/abdul-image.jpg', // Replace with Abdul-Moomin's image
 							},
 							{
