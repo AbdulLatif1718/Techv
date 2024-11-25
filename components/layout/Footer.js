@@ -28,7 +28,7 @@ const Footer = () => {
 					</p>
 					<div className="flex space-x-4">
 						<a
-							href="https://www.facebook.com"
+							href="https://web.facebook.com/profile.php?id=61564878252192"
 							aria-label="Facebook"
 							className="hover:text-green-400"
 							target="_blank"
@@ -46,7 +46,7 @@ const Footer = () => {
 							<FaTwitter className="text-xl" />
 						</a>
 						<a
-							href="https://www.linkedin.com"
+							href="https://www.linkedin.com/company/techvergeafrica/"
 							aria-label="LinkedIn"
 							className="hover:text-green-400"
 							target="_blank"
