@@ -1,5 +1,6 @@
 /** @format */
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLanguage } from "../../features/language/languageSlice";
@@ -10,6 +11,38 @@ const Landing = () => {
 	const dispatch = useDispatch();
 	const englishLanguage = useSelector(selectLanguage);
 
+	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+	const [fade, setFade] = useState(false);
+
+	// Array of background images and corresponding text
+	const backgroundImages = [
+		{
+			src: "/images/bg1.jpg", // Image 1
+			text: "Empowering African Youth Through Technology",
+		},
+		{
+			src: "/images/bg2.jpg", // Image 2
+			text: "Building a Brighter Future Through Education",
+		},
+		{
+			src: "/images/bg3.jpg", // Image 3
+			text: "Innovation and Growth for Africa's Future",
+		},
+	];
+
+	// Change the background image and text every 4 seconds
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setFade(true); // Trigger fade out
+			setTimeout(() => {
+				setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+				setFade(false); // Trigger fade in after image has changed
+			}, 500); // Wait for fade-out animation to finish
+		}, 4000); // Change every 4 seconds
+
+		return () => clearInterval(interval); // Cleanup on component unmount
+	}, []);
+
 	const handleClick = () => {
 		router.push("/product");
 	};
@@ -18,19 +51,30 @@ const Landing = () => {
 		<section className="relative">
 			{/* Hero Section */}
 			<div className="relative">
-				<video
-					autoPlay
-					loop
-					muted
-					className="absolute inset-0 w-full h-full object-cover z-[-1]"
+				{/* Background Image */}
+				<div
+					className={`absolute inset-0 z-[-1] transition-opacity duration-1000 ease-in-out ${fade ? "opacity-0" : "opacity-100"
+						}`}
 				>
-					<source src="/images/video1.mp4" type="video/mp4" />
-					Your browser does not support the video tag.
-				</video>
-				<div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70 z-0"></div>
+					<Image
+						src={backgroundImages[currentImageIndex].src} // Dynamically change the background image
+						alt="Background Image"
+						layout="fill"
+						objectFit="cover"
+						className="absolute inset-0"
+					/>
+				</div>
+
+				{/* Dark Gradient Overlay */}
+				<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90 z-0"></div>
+
+				{/* Text Section */}
 				<div className="relative z-10 flex flex-col items-center justify-center h-screen text-white text-center px-4">
-					<h1 className="text-5xl md:text-6xl font-bold">
-						Empowering African Youth Through Technology
+					<h1
+						className={`text-5xl md:text-6xl font-bold transition-opacity duration-1000 ease-in-out ${fade ? "opacity-0" : "opacity-100"
+							}`}
+					>
+						{backgroundImages[currentImageIndex].text}
 					</h1>
 					<p className="mt-4 text-lg md:text-xl max-w-3xl">
 						{englishLanguage
