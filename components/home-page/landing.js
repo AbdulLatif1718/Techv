@@ -1,10 +1,10 @@
 /** @format */
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLanguage } from "../../features/language/languageSlice";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const Landing = () => {
 	const router = useRouter();
@@ -28,6 +28,10 @@ const Landing = () => {
 			src: "/images/bg3.jpg", // Image 3
 			text: "Innovation and Growth for Africa's Future",
 		},
+		// {
+		//   src: "/images/bg4.jpg", // Image 4 (new addition)
+		//   text: "Shaping the Future with Creativity and Skills",
+		// },
 	];
 
 	// Change the background image and text every 4 seconds
@@ -50,20 +54,20 @@ const Landing = () => {
 	return (
 		<section className="relative">
 			{/* Hero Section */}
-			<div className="relative min-h-screen"> {/* Ensure the section takes at least the screen height */}
-				{/* Background Image */}
-				<div
-					className={`absolute inset-0 z-[-1] transition-opacity duration-1000 ease-in-out ${fade ? "opacity-0" : "opacity-100"}`}
-					style={{ height: "100vh" }}
-				>
-					<Image
-						src={backgroundImages[currentImageIndex].src} // Dynamically change the background image
-						alt="Background Image"
-						layout="fill" // This fills the parent container
-						objectFit="cover" // Ensures the image covers the container without distortion
-						className="absolute inset-0"
-					/>
-				</div>
+			<div className="relative min-h-screen">
+				{/* Background Image with Framer Motion for transition */}
+				<motion.div
+					className="absolute inset-0 z-[-1]"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: fade ? 0 : 1 }}
+					transition={{ duration: 1 }}
+					style={{
+						backgroundImage: `url(${backgroundImages[currentImageIndex].src})`,
+						backgroundSize: "cover",
+						backgroundPosition: "center",
+						height: "100vh", // Full viewport height
+					}}
+				></motion.div>
 
 				{/* Dark Gradient Overlay */}
 				<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90 z-0"></div>
