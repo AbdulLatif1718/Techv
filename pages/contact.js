@@ -39,7 +39,8 @@ function ContactPage() {
         <ContactComponent />
       </section>
 
-      {/* Partners Section */}
+      {/* Partners Section (Commented Out) */}
+      {/*
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold">Our Partners</h2>
@@ -47,9 +48,7 @@ function ContactPage() {
             Our mission is supported by incredible partners. Together, we are creating meaningful opportunities for African youth.
           </p>
 
-          {/* Partner Logos */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-            {/* Example Partner logos */}
             {[1, 2, 3, 4, 5].map((partner, index) => (
               <div
                 key={index}
@@ -62,6 +61,47 @@ function ContactPage() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      */}
+
+      {/* WhatsApp, Telegram, and Discord Card */}
+      <section className="py-16 px-4 bg-gray-100">
+        <div className="container mx-auto">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+            <h2 className="text-4xl font-bold text-green-500">
+              Stay Connected with TechVerge Africa
+            </h2>
+            <p className="mt-4 text-lg text-gray-700">
+              Join our WhatsApp, Telegram, or Discord communities for exciting updates, opportunities, and exclusive resources.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a
+                href="https://whatsapp.com/channel/0029VaDhgTs17Emu85qOvN1s" // Replace with your WhatsApp link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition-all"
+              >
+                Join WhatsApp
+              </a>
+              <a
+                href="https://t.me/+KV1naaYhb68yOWQ0" // Replace with your Telegram link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition-all"
+              >
+                Join Telegram
+              </a>
+              <a
+                href="https://discord.gg/your-discord-link" // Replace with your Discord link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-purple-500 text-white rounded-lg shadow hover:bg-purple-600 transition-all"
+              >
+                Join Discord
+              </a>
+            </div>
           </div>
         </div>
       </section>
