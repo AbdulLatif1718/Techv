@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from "next/link";
 import { FaRegLightbulb, FaUsers, FaMapMarkerAlt } from 'react-icons/fa';
 import { MdOutlineContactMail } from 'react-icons/md';
 import { AiOutlineTeam } from 'react-icons/ai';
@@ -151,8 +152,10 @@ const AboutPage = () => {
 						technology. Whether you want to learn, partner, or volunteer,
 						there’s a place for you at TechVerge Africa.
 					</p>
-					<button className="mt-8 px-6 py-3 bg-white text-green-500 rounded-lg hover:bg-gray-100 transition-all">
-						Get Involved
+					<button className="mt-6 px-8 py-4 bg-white text-green-500 rounded-lg hover:bg-gray-100 transition-all text-lg">
+						<Link href="/contact">
+							<span>Get Involved</span>
+						</Link>
 					</button>
 				</div>
 			</section>

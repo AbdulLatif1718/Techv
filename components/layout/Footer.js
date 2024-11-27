@@ -15,7 +15,7 @@ const Footer = () => {
 					</div>
 					<ul className="flex space-x-8 mb-6 md:mb-0">
 						<li><Link href="/" className="hover:text-green-400">Home</Link></li>
-						<li><Link href="/about" className="hover:text-green-400">About</Link></li>
+						<li><Link href="/about-us" className="hover:text-green-400">About</Link></li>
 						{/* <li><Link href="/courses" className="hover:text-green-400">Courses</Link></li>
 						<li><Link href="/blog" className="hover:text-green-400">Blog</Link></li>
 						<li><Link href="/jobs" className="hover:text-green-400">Jobs/Internships</Link></li> */}
