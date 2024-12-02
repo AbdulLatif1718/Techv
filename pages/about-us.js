@@ -11,13 +11,13 @@ const AboutPage = () => {
 			<section
 				className="relative bg-gray-900 text-white flex items-center justify-center h-60 bg-cover bg-center"
 				style={{
-					backgroundImage: `url('/path/to/your/hero-image.jpg')`, // Replace with your hero image
+					backgroundImage: `url('/images/about4.jpg')`, // Replace with your hero image
 				}}
 			>
 				<div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
 					<h1 className="text-5xl font-extrabold">About TechVerge Africa</h1>
-					<p className="mt-4 text-lg">
-						Empowering the next generation through technology education.
+					<p className="mt-4 text-lg italic">
+					"Shaping the Future of Africa, One Innovation at a Time."
 					</p>
 				</div>
 			</section>

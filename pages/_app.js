@@ -17,7 +17,7 @@ const progress = new ProgressBar({
 
 	// Color of the progress bar.
 	// Also used for the glow around the bar.
-	color: "#006aff",
+	color: "#ffff",
 
 	// Class name used for the progress bar element.
 	className: "bar-of-progress",

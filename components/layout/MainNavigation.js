@@ -1,4 +1,3 @@
-// MainNavigation.js
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -11,11 +10,12 @@ import {
   selectLanguage,
 } from "../../features/language/languageSlice";
 
-import SideBar from "./sideBar"; // Ensure correct import
+import SideBar from "./sideBar";
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
   const [burgerMenuStatus, setBurgerMenuStatus] = useState(false);
+  const [showAnnouncement, setShowAnnouncement] = useState(true); // State for announcement bar
   const dispatch = useDispatch();
   const englishLanguage = useSelector(selectLanguage);
 
@@ -29,14 +29,42 @@ const MainNavigation = () => {
     dispatch(setShowGreeceLanguageState());
   };
 
+  const closeAnnouncementBar = () => {
+    setShowAnnouncement(false);
+  };
+
   return (
     <>
-      {/* Main Navigation - English */}
+      {showAnnouncement && ( // Conditional rendering of the announcement bar
+        <div className={classes.announcementBar}>
+          <p>
+            🎉 Registration for the 2025 Training Cohort is Now Open! Don't miss this golden opportunity:
+            <strong> Register now </strong> and secure your spot!
+            <a
+              href="/registration-form" // Link to the registration form
+              target="_blank" // Opens in a new tab
+              rel="noopener noreferrer"
+              className={classes.registrationLink}
+            >
+              Click here to register
+            </a>
+          </p>
+          <button
+            className={classes.closeButton}
+            onClick={closeAnnouncementBar}
+          >
+            ✖
+          </button>
+        </div>
+      )}
+
+
+
       {englishLanguage && (
         <header className={classes.header}>
           <SideBar
             burgerMenuStatus={burgerMenuStatus}
-            setBurgerMenuStatus={setBurgerMenuStatus} // Ensure this is passed correctly
+            setBurgerMenuStatus={setBurgerMenuStatus}
             showGreeceLanguage={showGreeceLanguage}
             showEnglishLanguage={showEnglishLanguage}
             englishLanguage={englishLanguage}
@@ -69,9 +97,8 @@ const MainNavigation = () => {
                 <li>
                   <Link
                     href="/about-us"
-                    className={`${classes.worklink} ${
-                      router.pathname === "/about-us" ? classes.active : ""
-                    }`}
+                    className={`${classes.worklink} ${router.pathname === "/about-us" ? classes.active : ""
+                      }`}
                   >
                     About us
                   </Link>
@@ -79,9 +106,8 @@ const MainNavigation = () => {
                 <li>
                   <Link
                     href="/contact"
-                    className={`${classes.contact} ${
-                      router.pathname === "/contact" ? classes.active : ""
-                    }`}
+                    className={`${classes.contact} ${router.pathname === "/contact" ? classes.active : ""
+                      }`}
                   >
                     Contact
                   </Link>
@@ -111,8 +137,6 @@ const MainNavigation = () => {
           </div>
         </header>
       )}
-
-      {/* Similar for Greek Version */}
     </>
   );
 };

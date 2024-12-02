@@ -19,7 +19,7 @@ function ContactPage() {
 			{/* Hero Section */}
 			<section
 				className="mt-20 relative bg-gray-900 text-white flex items-center justify-center h-60 bg-cover bg-center"
-				style={{ backgroundImage: `url('/path-to-your-image.jpg')` }} // Replace with your image path
+				style={{ backgroundImage: `url('./.images/contact3.jpg')` }} // Replace with your image path
 			>
 				<div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
 					<h1 className="text-5xl font-extrabold">Contact Us</h1>

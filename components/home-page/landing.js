@@ -120,9 +120,9 @@ const Landing = () => {
 				<h2 className="text-4xl font-bold text-center mb-8">Upcoming Events</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{[
-						{ title: "Tech Workshop", date: "June 15, 2024", description: "Hands-on training in web development.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
-						{ title: "Hackathon 2024", date: "July 20-21, 2024", description: "Innovate and create with teams from across Africa.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
-						{ title: "Community Meetup", date: "August 5, 2024", description: "Network with like-minded individuals.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
+						{ title: "Training Program", date: "January 10, 2025", description: "Zero to mastery training on the most demanding tech skills.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
+						{ title: "Webiner Meetup", date: "March 13, 2025", description: "Network with like-minded individuals.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
+						{ title: "Hackathon 2025", date: "October 20-21, 2025", description: "Innovate and create with teams from across Africa.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
 					].map((event, index) => (
 						<div
 							key={index}
@@ -145,7 +145,6 @@ const Landing = () => {
 				<p className="mt-4 text-lg max-w-2xl mx-auto">
 					Be part of the next wave of innovation in Africa. Whether you want to learn, partner, or volunteer, there is a place for you.
 				</p>
-				import Link from "next/link";
 
 				<button className="mt-6 px-8 py-4 bg-white text-green-500 rounded-lg hover:bg-gray-100 transition-all text-lg">
 					<Link href="/contact">
