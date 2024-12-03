@@ -37,7 +37,7 @@ const Footer = () => {
 							<FaFacebookF className="text-xl" />
 						</a>
 						<a
-							href="https://www.twitter.com"
+							href="https://x.com/TechvergeAfrica"
 							aria-label="Twitter"
 							className="hover:text-green-400"
 							target="_blank"
