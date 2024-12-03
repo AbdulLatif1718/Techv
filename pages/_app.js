@@ -51,5 +51,4 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp;
 
-// adobe link
-// https://xd.adobe.com/view/f8520c0a-fab2-4362-ab7f-f9b4540030ec-ad01/
+

@@ -38,7 +38,7 @@ const MainNavigation = () => {
       {showAnnouncement && ( // Conditional rendering of the announcement bar
         <div className={classes.announcementBar}>
           <p>
-            🎉 Registration for the 2025 Training Cohort is Now Open! Don't miss this golden opportunity:
+            🎉 Registration for the 2025 Training Cohort is Now Open! Don&apos;t miss this golden opportunity:
             <strong> Register now </strong> and secure your spot!
             <a
               href="/registration-form" // Link to the registration form

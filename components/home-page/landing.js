@@ -37,7 +37,7 @@ const Landing = () => {
 				setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
 				setFade(false);
 			}, 500);
-		}, 4000);
+		}, 5000);
 
 		return () => clearInterval(interval);
 	}, []);

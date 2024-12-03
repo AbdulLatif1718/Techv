@@ -17,7 +17,7 @@ const AboutPage = () => {
 				<div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
 					<h1 className="text-5xl font-extrabold">About TechVerge Africa</h1>
 					<p className="mt-4 text-lg italic">
-					"Shaping the Future of Africa, One Innovation at a Time."
+					&quot;Shaping the Future of Africa, One Innovation at a Time.&quot;
 					</p>
 				</div>
 			</section>
