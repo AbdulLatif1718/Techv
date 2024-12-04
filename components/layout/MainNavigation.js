@@ -41,7 +41,7 @@ const MainNavigation = () => {
             🎉 Registration for the 2025 Training Cohort is Now Open! Don&apos;t miss this golden opportunity:
             <strong> Register now </strong> and secure your spot!
             <a
-              href="/registration-form" // Link to the registration form
+              href="https://forms.gle/auKHf2rzaPJyBqdU6" // Link to the registration form
               target="_blank" // Opens in a new tab
               rel="noopener noreferrer"
               className={classes.registrationLink}
