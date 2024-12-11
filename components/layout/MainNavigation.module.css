@@ -29,14 +29,14 @@
   }
   
   .registrationLink {
-	color: #007bff; /* Blue color for the link */
+	color: #0056b3;; /* Blue color for the link */
 	text-decoration: underline; /* Underline to indicate it's a link */
 	font-weight: bold;
 	margin-left: 5px;
   }
   
   .registrationLink:hover {
-	color: #0056b3; /* Darker blue on hover */
+	color: #0e71db; /* Darker blue on hover */
 	text-decoration: none; /* Remove underline on hover */
   }
   

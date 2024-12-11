@@ -4,6 +4,7 @@ import Head from "next/head";
 import Router from "next/router";
 import { store } from "../app/store";
 import { Provider } from "react-redux";
+import { appWithTranslation } from 'next-i18next';
 
 import "../styles/globals.css";
 import Layout from "../components/layout/layout";
@@ -49,6 +50,6 @@ function MyApp({ Component, pageProps }) {
 	);
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
 
 
