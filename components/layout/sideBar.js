@@ -114,7 +114,7 @@ const SideBar = ({ burgerMenuStatus, setBurgerMenuStatus }) => {
 									English
 								</option>
 								<option value="Greek" selected={!englishLanguage}>
-									Greek
+									French
 								</option>
 							</select>
 						</div>

@@ -23,7 +23,7 @@ const MainNavigation = () => {
     console.log("Close button clicked");
     setShowAnnouncement(false);
   };
-  
+
 
   return (
     <>
@@ -44,9 +44,11 @@ const MainNavigation = () => {
           <button
             className={classes.closeButton}
             onClick={closeAnnouncementBar}
+            onTouchEnd={closeAnnouncementBar}
           >
             ✖
           </button>
+
         </div>
       )}
 
