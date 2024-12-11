@@ -20,8 +20,10 @@ const MainNavigation = () => {
   };
 
   const closeAnnouncementBar = () => {
+    console.log("Close button clicked");
     setShowAnnouncement(false);
   };
+  
 
   return (
     <>
@@ -83,7 +85,7 @@ const MainNavigation = () => {
                   href="/about-us"
                   className={`${classes.worklink} ${router.pathname === "/about-us" ? classes.active : ""}`}
                 >
-                  {t('about_us')}
+                  {t('about us')}
                 </Link>
               </li>
               <li>
