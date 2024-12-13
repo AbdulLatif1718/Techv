@@ -15,7 +15,7 @@ const TeamPage = () => {
         <div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
           <h1 className="text-6xl font-extrabold leading-tight">Meet Our Diverse Team</h1>
           <p className="mt-4 text-lg italic">
-            "Innovating Africa through technology, powered by our passionate team."
+          &quot;Innovating Africa through technology, powered by our passionate team.&quot;
           </p>
         </div>
       </section>
