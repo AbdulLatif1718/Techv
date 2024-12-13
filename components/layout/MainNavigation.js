@@ -9,8 +9,7 @@ import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
   const { t } = useTranslation(); // Initialize translation hook
-  const [burgerMenuStatus, setBurgerMenuStatus] = useState(false);
-  const [showAnnouncement, setShowAnnouncement] = useState(true); // State for announcement bar
+  const [burgerMenuStatus, setBurgerMenuStatus] = useState(false); // For burger menu
   const router = useRouter();
 
   // Function to handle language change
@@ -19,39 +18,8 @@ const MainNavigation = () => {
     router.push(router.pathname, router.asPath, { locale: selectedLanguage });
   };
 
-  const closeAnnouncementBar = () => {
-    console.log("Close button clicked");
-    setShowAnnouncement(false);
-  };
-
-
   return (
     <>
-      {showAnnouncement && ( // Conditional rendering of the announcement bar
-        <div className={classes.announcementBar}>
-          <p>
-            🎉 Registration for the 2025 Training Cohort is Now Open! Don&apos;t miss this golden opportunity:
-            <strong> Register now </strong> and secure your spot!
-            <a
-              href="https://forms.gle/auKHf2rzaPJyBqdU6" // Link to the registration form
-              target="_blank" // Opens in a new tab
-              rel="noopener noreferrer"
-              className={classes.registrationLink}
-            >
-              Click here to register
-            </a>
-          </p>
-          <button
-            className={classes.closeButton}
-            onClick={closeAnnouncementBar}
-            onTouchEnd={closeAnnouncementBar}
-          >
-            ✖
-          </button>
-
-        </div>
-      )}
-
       <header className={classes.header}>
         <SideBar
           burgerMenuStatus={burgerMenuStatus}
@@ -90,6 +58,14 @@ const MainNavigation = () => {
                   {t('about us')}
                 </Link>
               </li>
+              {/* <li>
+                <Link
+                  href="/our-team"
+                  className={`${classes.worklink} ${router.pathname === "/our-team" ? classes.active : ""}`}
+                >
+                  {t('our team')}
+                </Link>
+              </li> */}
               <li>
                 <Link
                   href="/contact"

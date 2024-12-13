@@ -16,7 +16,7 @@ export default function Home() {
 				/>
 				<meta
 					name='description'
-					content='TechVerge Africa is a startup focused on empowering African youth through accessible technology education. We aim to bridge the gap between talent and opportunity, helping young minds develop skills, build tech solutions, and drive positive change.'
+					content='TechVerge Africa is a startup dedicated to empowering African youth and driving global innovation through technology education, digital solutions, and community building.'
 				/>
 				<link rel='icon' href='/favicon3.ico' />
 			</Head>

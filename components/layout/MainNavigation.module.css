@@ -1,55 +1,5 @@
 /** @format */
 
-.announcementBar {
-	background-color: #10B981;
-	/* Bright yellow background */
-	color: #000;
-	/* Black text */
-	text-align: center;
-	padding: 10px 20px;
-	font-size: 16px;
-	position: relative;
-	top: 0;
-	width: 100%;
-	z-index: 9998;
-	/* Ensures it stays above other elements */
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.announcementBar p {
-	margin: 0;
-}
-
-.closeButton {
-	background: none;
-	border: none;
-	font-size: 18px;
-	cursor: pointer;
-	color: #000;
-	margin-left: 20px;
-	z-index: 9999;
-}
-
-.registrationLink {
-	color: #0056b3;
-	;
-	/* Blue color for the link */
-	text-decoration: underline;
-	/* Underline to indicate it's a link */
-	font-weight: bold;
-	margin-left: 5px;
-}
-
-.registrationLink:hover {
-	color: #0e71db;
-	/* Darker blue on hover */
-	text-decoration: none;
-	/* Remove underline on hover */
-}
-
-
 .header {
 	background-color: #1b1c1d;
 	box-shadow: 10px 15px 15px #00000029;
