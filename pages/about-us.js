@@ -29,8 +29,7 @@ const AboutPage = () => {
 						<FaRegLightbulb className="text-green-500" /> Our Mission and Vision
 					</h2>
 					<p className="mt-4 text-gray-700 max-w-2xl mx-auto">
-						Our mission is to empower African youth through accessible
-						technology education and drive global innovation. We envision a
+						Our mission is to empower African youth and drive global innovation through technology education, digital solutions, and community building. We envision a
 						future where technology bridges the gap between opportunities and
 						aspirations, fostering a community of skilled individuals ready to
 						make an impact.
@@ -82,7 +81,7 @@ const AboutPage = () => {
 								image: '/images/cto.jpg', // Replace with Abdul-Moomin's image
 							},
 							{
-								name: 'Mustapha',
+								name: 'Abdallah Mustapha',
 								role: 'Head of Programs',
 								image: '/images/hop.jpg', // Replace with Mustapha's image
 							},
