@@ -68,7 +68,7 @@ const SideBar = ({ burgerMenuStatus, setBurgerMenuStatus }) => {
                     }`}
                   onClick={() => setBurgerMenuStatus(false)}
                 >
-                  {t("aboutUs")}
+                  {t("about us")}
                 </Link>
               </li>
               <li>

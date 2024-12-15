@@ -17,7 +17,7 @@ const AboutPage = () => {
 				<div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
 					<h1 className="text-5xl font-extrabold">About TechVerge Africa</h1>
 					<p className="mt-4 text-lg italic">
-					&quot;Shaping the Future of Africa, One Innovation at a Time.&quot;
+						&quot;Where African Knowledge and Innovation Sparks Global Impact.&quot;
 					</p>
 				</div>
 			</section>
@@ -28,7 +28,7 @@ const AboutPage = () => {
 					<h2 className="text-4xl font-bold flex items-center justify-center gap-3">
 						<FaRegLightbulb className="text-green-500" /> Our Mission and Vision
 					</h2>
-					<p className="mt-4 text-gray-700 max-w-2xl mx-auto">
+					<p className="mt-4 text-gray-700 max-w-2xl mx-auto text-lg">
 						Our mission is to empower African youth and drive global innovation through technology education, digital solutions, and community building. We envision a
 						future where technology bridges the gap between opportunities and
 						aspirations, fostering a community of skilled individuals ready to
@@ -43,7 +43,7 @@ const AboutPage = () => {
 					<h2 className="text-4xl font-bold flex items-center justify-center gap-3">
 						<FaMapMarkerAlt className="text-green-500" /> Objectives
 					</h2>
-					<ul className="mt-8 space-y-6 text-left max-w-2xl mx-auto">
+					<ul className="mt-8 space-y-6 text-left max-w-2xl mx-auto text-lg">
 						{[
 							'Reduce youth unemployment through digital literacy training and job placement.',
 							'Develop innovative tech solutions addressing Africa’s unique challenges.',
