@@ -49,7 +49,7 @@ const Landing = () => {
 	return (
 		<section className="relative">
 			{/* Hero Section */}
-			<div className="relative min-h-screen">
+			<div className="relative min-h-screen bg-gradient-to-b from-black/50 via-black/70 to-black/90">
 				<motion.div
 					className="absolute inset-0 z-[-1]"
 					initial={{ opacity: 0 }}
@@ -63,22 +63,18 @@ const Landing = () => {
 					}}
 				></motion.div>
 
-				<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90 z-0"></div>
-
-				<div className="relative z-10 flex flex-col items-center justify-center h-screen text-white text-center px-4">
-					<h1
-						className={`text-5xl md:text-6xl font-bold transition-opacity duration-1000 ease-in-out ${fade ? "opacity-0" : "opacity-100"}`}
-					>
+				<div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center text-white">
+					<h1 className="text-5xl md:text-6xl font-extrabold leading-tight opacity-100 transition-opacity duration-1000 ease-in-out">
 						{backgroundImages[currentImageIndex].text}
 					</h1>
-					<p className="mt-4 text-lg md:text-xl max-w-3xl">
+					<p className="mt-4 text-lg md:text-xl max-w-2xl">
 						{englishLanguage
 							? "Join us in building a brighter future through education and innovation."
 							: "Συμμετέχετε μαζί μας στη δημιουργία ενός φωτεινότερου μέλλοντος μέσω της εκπαίδευσης και της καινοτομίας."}
 					</p>
 					<button
 						onClick={handleClick}
-						className="mt-6 px-8 py-3 bg-green-500 hover:bg-green-600 rounded-lg text-lg font-medium transition-all transform hover:scale-105 flex items-center space-x-2"
+						className="mt-6 px-8 py-3 bg-green-600 hover:bg-green-700 text-lg font-semibold rounded-lg flex items-center space-x-2 transform hover:scale-105 transition-all"
 					>
 						<span>{englishLanguage ? "Learn More" : "Μάθετε Περισσότερα"}</span>
 						<FaArrowRight className="h-5 w-5" />
@@ -87,28 +83,76 @@ const Landing = () => {
 			</div>
 
 			{/* Overview Section */}
-			<section className="bg-white py-16 px-4 text-center">
-				<h2 className="text-4xl font-bold">Our Mission</h2>
-				<p className="mt-4 text-gray-700 text-lg max-w-3xl mx-auto">
-					To empower African youth and drive global innovation through technology education, digital solutions, and community building.
-				</p>
+			<section className="py-16 px-4 flex flex-col lg:flex-row-reverse items-center justify-center bg-white">
+				<div className="lg:w-1/2 mb-8 lg:mb-0 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+					<img
+						src="/images/mission.jpeg"
+						alt="Mission"
+						className="rounded-lg shadow-xl w-full h-auto object-cover max-h-[400px] lg:max-h-[500px]"
+					/>
+				</div>
+				<div className="lg:w-1/2 text-center lg:text-left">
+					<h2 className="text-4xl font-bold mb-4">Our Mission</h2>
+					<p className="mt-4 text-gray-700 text-lg max-w-3xl mx-auto">
+						To empower African youth and drive global innovation by leveraging emerging technologies to create impactful solutions, foster collaboration, and provide transformative education.
+					</p>
+				</div>
 			</section>
 
-			{/* Key Programs Section */}
-			<section className="bg-gray-50 py-16 px-4">
-				<h2 className="text-4xl font-bold text-center mb-8">Our Programs</h2>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{/* Vision Section */}
+			<section className="py-16 px-4 flex flex-col lg:flex-row items-center justify-center bg-gray-50">
+				<div className="lg:w-1/2 mb-8 lg:mb-0 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+					<img
+						src="/images/vision.jpg"
+						alt="Vision"
+						className="rounded-lg shadow-xl w-full h-auto object-cover max-h-[400px] lg:max-h-[500px]"
+					/>
+				</div>
+				<div className="lg:w-1/2 text-center lg:text-left">
+					<h2 className="text-4xl font-bold mb-4">Our Vision</h2>
+					<p className="mt-4 text-gray-700 text-lg max-w-3xl mx-auto">
+						To become the greatest lab for innovation in Africa, where businesses, individuals, and startups bring their ideas and challenges, and we build solutions that create impact globally.
+					</p>
+				</div>
+			</section>
+
+			{/* Programs and Offerings Section */}
+			<section className="py-16 px-4 text-center bg-gray-100">
+				<h2 className="text-4xl font-bold mb-8">Our Programs and Offerings</h2>
+
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 					{[
-						{ title: "Digital Literacy Training", description: "Equipping youth with essential tech skills.", icon: <FaLaptopCode className="h-12 w-12 text-green-600 mb-4" /> },
-						{ title: "Tech Solutions", description: "Developing innovative software and digital tools.", icon: <FaCog className="h-12 w-12 text-green-600 mb-4" /> },
-						{ title: "Community Engagement", description: "Building a strong network through events and workshops.", icon: <FaUsers className="h-12 w-12 text-green-600 mb-4" /> },
+						{
+							title: "Tech Product Development",
+							description: "Build innovative software and digital tools for clients to solve real-world challenges.",
+							icon: <FaLaptopCode className="h-12 w-12 text-green-600 mb-4" />,
+							image: "/images/program1.jpg"
+						},
+						{
+							title: "Collaborative Innovation",
+							description: "Work with startups, businesses, and individuals to turn ideas into functional products.",
+							icon: <FaCog className="h-12 w-12 text-green-600 mb-4" />,
+							image: "/images/program2.jpg"
+						},
+						{
+							title: "Digital Literacy",
+							description: "Provide basic tech education to empower youth and communities with the skills to succeed.",
+							icon: <FaUsers className="h-12 w-12 text-green-600 mb-4" />,
+							image: "/images/program4.jpg"
+						},
 					].map((program, index) => (
 						<div
 							key={index}
-							className="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-all transform hover:scale-105 flex flex-col items-center text-center"
+							className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
 						>
-							{program.icon}
-							<h3 className="text-xl font-bold text-green-600">{program.title}</h3>
+							<div className="flex justify-center mb-4">
+								<img
+									src={program.image}
+									alt={program.title}
+									className="h-40 w-40 object-cover rounded-full shadow-lg"
+								/>
+							</div>
+							<h3 className="text-2xl font-semibold text-green-600">{program.title}</h3>
 							<p className="mt-2 text-gray-600">{program.description}</p>
 						</div>
 					))}
@@ -116,23 +160,22 @@ const Landing = () => {
 			</section>
 
 			{/* Upcoming Events Section */}
-			<section className="bg-gray-50 py-16 px-4">
+			<section className="py-16 px-4 bg-white">
 				<h2 className="text-4xl font-bold text-center mb-8">Upcoming Events</h2>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 					{[
-						{ title: "Training Program", date: "January 10, 2025", description: "Zero to mastery training on the most demanding tech skills.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
-						{ title: "Webiner Meetup", date: "March 13, 2025", description: "Network with like-minded individuals.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
-						{ title: "Hackathon 2025", date: "October 20-21, 2025", description: "Innovate and create with teams from across Africa.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
+						{ title: "Training Program", date: "January 10, 2025", description: "Zero to mastery training on the most demanding tech skills.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" />, image: "/images/event1.jpg" },
+						{ title: "Webinar Meetup", date: "March 13, 2025", description: "Network with like-minded individuals.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" />, image: "/images/event2.jpg" },
+						{ title: "Hackathon 2025", date: "October 20-21, 2025", description: "Innovate and create with teams from across Africa.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" />, image: "/images/event3.jpg" },
 					].map((event, index) => (
 						<div
 							key={index}
-							className="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-all transform hover:scale-105 flex flex-col items-center text-center"
+							className="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-all transform hover:scale-105 flex flex-col items-center"
 						>
+							<img src={event.image} alt={event.title} className="h-40 w-40 object-cover rounded-full mb-4" />
 							{event.icon}
 							<h3 className="text-xl font-bold text-green-600">{event.title}</h3>
-							<p className="mt-2 text-gray-600">
-								<strong>Date:</strong> {event.date}
-							</p>
+							<p className="mt-2 text-gray-600"><strong>Date:</strong> {event.date}</p>
 							<p className="mt-2 text-gray-600">{event.description}</p>
 						</div>
 					))}
@@ -140,18 +183,16 @@ const Landing = () => {
 			</section>
 
 			{/* Call to Action Section */}
-			<section className="bg-green-500 text-white py-16 px-4 text-center">
+			<section className="py-16 px-4 text-center bg-green-500 text-white">
 				<h2 className="text-4xl font-bold mb-4">Join Our Movement</h2>
 				<p className="mt-4 text-lg max-w-2xl mx-auto">
 					Be part of the next wave of innovation in Africa. Whether you want to learn, partner, or volunteer, there is a place for you.
 				</p>
-
 				<button className="mt-6 px-8 py-4 bg-white text-green-500 rounded-lg hover:bg-gray-100 transition-all text-lg">
 					<Link href="/contact">
 						<span>Get Involved</span>
 					</Link>
 				</button>
-
 			</section>
 		</section>
 	);
