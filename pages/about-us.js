@@ -14,7 +14,7 @@ const AboutPage = () => {
 				<div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
 					<h1 className="text-5xl font-extrabold">About TechVerge Africa</h1>
 					<p className="mt-4 text-lg italic">
-						"Empowering African Youth Through Technology & Innovation."
+					&quot;Empowering African Youth Through Technology & Innovation.&quot;
 					</p>
 				</div>
 			</section>
@@ -26,7 +26,7 @@ const AboutPage = () => {
 						<FaUsers className="text-green-500" /> About TechVerge Africa
 					</h2>
 					<p className="mt-4 text-lg text-gray-200 max-w-3xl mx-auto">
-					TechVerge Africa is dedicated to empowering African youth and driving global innovation. We harness emerging technologies to create solutions that tackle real-world challenges, foster collaboration, and provide transformative education for the next generation of leaders. Our vision is to be Africa’s leading hub for innovation, where ideas are co-created to benefit both African communities and the world.
+					TechVerge Africa is dedicated to empowering African youth and driving global innovation. We harness emerging technologies to create solutions that tackle real-world challenges, foster collaboration, and provide transformative education for the next generation of leaders. Our vision is to be Africa&quot;s leading hub for innovation, where ideas are co-created to benefit both African communities and the world.
 					</p>
 				</div>
 			</section>
