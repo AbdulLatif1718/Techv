@@ -160,22 +160,23 @@ const Landing = () => {
 			</section>
 
 			{/* Upcoming Events Section */}
-			<section className="py-16 px-4 bg-white">
+			<section className="bg-gray-50 py-16 px-4">
 				<h2 className="text-4xl font-bold text-center mb-8">Upcoming Events</h2>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{[
-						{ title: "Training Program", date: "January 10, 2025", description: "Zero to mastery training on the most demanding tech skills.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" />, image: "/images/event1.jpg" },
-						{ title: "Webinar Meetup", date: "March 13, 2025", description: "Network with like-minded individuals.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" />, image: "/images/event2.jpg" },
-						{ title: "Hackathon 2025", date: "October 20-21, 2025", description: "Innovate and create with teams from across Africa.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" />, image: "/images/event3.jpg" },
+						{ title: "Training Program", date: "January 10, 2025", description: "Zero to mastery training on the most demanding tech skills.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
+						{ title: "Webiner Meetup", date: "March 13, 2025", description: "Network with like-minded individuals.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
+						{ title: "Hackathon 2025", date: "October 20-21, 2025", description: "Innovate and create with teams from across Africa.", icon: <FaCalendarAlt className="h-8 w-8 text-green-600 mb-4" /> },
 					].map((event, index) => (
 						<div
 							key={index}
-							className="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-all transform hover:scale-105 flex flex-col items-center"
+							className="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition-all transform hover:scale-105 flex flex-col items-center text-center"
 						>
-							<img src={event.image} alt={event.title} className="h-40 w-40 object-cover rounded-full mb-4" />
 							{event.icon}
 							<h3 className="text-xl font-bold text-green-600">{event.title}</h3>
-							<p className="mt-2 text-gray-600"><strong>Date:</strong> {event.date}</p>
+							<p className="mt-2 text-gray-600">
+								<strong>Date:</strong> {event.date}
+							</p>
 							<p className="mt-2 text-gray-600">{event.description}</p>
 						</div>
 					))}
