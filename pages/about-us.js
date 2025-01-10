@@ -26,7 +26,7 @@ const AboutPage = () => {
 						<FaUsers className="text-green-500" /> About TechVerge Africa
 					</h2>
 					<p className="mt-4 text-lg text-gray-200 max-w-3xl mx-auto">
-					TechVerge Africa is a forward-thinking organization dedicated to driving African innovation, empowering youth, and solving real-world challenges through cutting-edge technology. As a lean, online-focused startup, TechVerge Africa blends education, emerging tech solutions, and community engagement to catalyze growth across the continent.
+					TechVerge Africa is dedicated to empowering African youth and driving global innovation. We harness emerging technologies to create solutions that tackle real-world challenges, foster collaboration, and provide transformative education for the next generation of leaders. Our vision is to be Africa’s leading hub for innovation, where ideas are co-created to benefit both African communities and the world.
 					</p>
 				</div>
 			</section>
