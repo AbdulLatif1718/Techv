@@ -86,7 +86,7 @@ const Landing = () => {
 			<section className="py-16 px-4 flex flex-col lg:flex-row-reverse items-center justify-center bg-white">
 				<div className="lg:w-1/2 mb-8 lg:mb-0 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
 					<img
-						src="/images/mission.jpeg"
+						src="/images/mission.jpg"
 						alt="Mission"
 						className="rounded-lg shadow-xl w-full h-auto object-cover max-h-[400px] lg:max-h-[500px]"
 					/>

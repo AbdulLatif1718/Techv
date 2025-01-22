@@ -9,153 +9,130 @@ const AboutPage = () => {
 		<div className="overflow-x-hidden mt-20">
 			{/* Hero Section */}
 			<section className="relative bg-gray-900 text-white flex items-center justify-center bg-cover bg-center bg-no-repeat"
-				style={{ backgroundImage: `url('/images/about4.jpg')`, height: '60vh', backgroundSize: 'cover' }}
+				style={{ backgroundImage: `url('/images/bg1.jpg')`, height: '70vh', backgroundSize: 'cover' }}
 			>
-				<div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
-					<h1 className="text-5xl font-extrabold">About TechVerge Africa</h1>
-					<p className="mt-4 text-lg italic">
-					&quot;Empowering African Youth Through Technology & Innovation.&quot;
-					</p>
-				</div>
-			</section>
-
-			{/* About Section */}
-			<section className="py-16 px-4 bg-gray-900 text-white">
-				<div className="container mx-auto text-center">
-					<h2 className="text-4xl font-bold flex items-center justify-center gap-3">
-						<FaUsers className="text-green-500" /> About TechVerge Africa
-					</h2>
-					<p className="mt-4 text-lg text-gray-200 max-w-3xl mx-auto">
-					TechVerge Africa is dedicated to empowering African youth and driving global innovation. We harness emerging technologies to create solutions that tackle real-world challenges, foster collaboration, and provide transformative education for the next generation of leaders. Our vision is to be Africa&quot;s leading hub for innovation, where ideas are co-created to benefit both African communities and the world.
+				<div className="bg-gray-900 bg-opacity-70 p-8 text-center rounded-lg shadow-lg">
+					<h1 className="text-6xl font-extrabold text-white leading-tight">
+						About Us
+					</h1>
+					<p className="mt-4 text-lg sm:text-xl lg:text-2xl text-gray-200 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed">
+						TechVerge Africa is dedicated to empowering African youth and driving global innovation. We harness emerging technologies to create solutions that tackle real-world challenges, foster collaboration, and provide transformative education for the next generation of leaders. Our vision is to be Africa&apos;s leading hub for innovation, where ideas are co-created to benefit both African communities and the world.
 					</p>
 				</div>
 			</section>
 
 			{/* Mission and Vision Section */}
-			<section className="py-16 px-4 bg-white">
-				<div className="mt-6 flex flex-col lg:flex-row items-center justify-center gap-12">
-					<div className="lg:w-1/2 mb-8 lg:mb-0 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+			<section className="py-16 px-6 bg-gray-900 text-white">
+				<div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+					<div className="lg:w-1/2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
 						<Image
 							src="/images/mission.png"
 							alt="Mission"
-							width={600} // Adjusted width
-							height={400} // Adjusted height
-							className="rounded-lg shadow-lg w-full h-auto object-cover"
+							width={600}
+							height={400}
+							className="rounded-lg shadow-xl w-full h-auto object-cover"
 						/>
 					</div>
 					<div className="lg:w-1/2">
-						<h2 className="text-4xl font-bold flex items-center justify-center gap-3">
-							<FaRegLightbulb className="text-green-500" /> Our Mission and Vision
+						<h2 className="text-4xl text-yellow-500 font-bold flex items-center justify-center gap-3 mb-6">
+							<FaRegLightbulb className="text-yellow-500" /> Our Mission and Vision
 						</h2>
-						<p className="mt-4 text-gray-700 max-w-2xl mx-auto text-lg">
+						<p className="text-lg">
 							<strong>Mission:</strong> To empower African youth and drive global innovation by leveraging emerging technologies to create impactful solutions, foster collaboration, and provide transformative education.
 						</p>
-						<p className="mt-6 text-gray-700 max-w-2xl mx-auto text-lg">
+						<p className="mt-6 text-lg">
 							<strong>Vision:</strong> To become the greatest lab for innovation in Africa, where businesses, individuals, and startups bring their ideas and challenges, and we build solutions that create impact globally.
 						</p>
 					</div>
 				</div>
 			</section>
 
+			{/* Core Focus & Secondary Offerings Section */}
 			<section className="py-16 px-4 bg-gray-50">
-				<div className="container mx-auto text-center">
-					<h2 className="text-4xl font-bold flex items-center justify-center gap-3">
+				<div className="text-center">
+					<h2 className="text-4xl font-bold flex items-center justify-center gap-3 mb-12">
 						<FaMapMarkerAlt className="text-green-500" /> Core Focus & Secondary Offerings
 					</h2>
 
-					{/* Core Focus Section */}
-					<div className="mt-12">
+					{/* Tech Product Development */}
+					<div className="mb-12">
 						<h3 className="text-3xl font-semibold text-green-600">Tech Product Development</h3>
 						<div className="mt-6 flex flex-col lg:flex-row items-center justify-center gap-12">
-							<div className="lg:w-1/2 mb-8 lg:mb-0 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+							<div className="lg:w-1/2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
 								<Image
 									src="/images/program1.jpg"
 									alt="Tech Product Development"
-									width={600} // Adjusted width
-									height={400} // Adjusted height
+									width={600}
+									height={400}
 									className="w-full h-auto object-cover rounded-lg shadow-lg"
 								/>
 							</div>
-							<div className="lg:w-1/2 w-full">
-								<p className="mt-6 text-gray-700 text-lg max-w-3xl mx-auto">
-									We build innovative software and digital tools for businesses and organizations. Through proactive development of proprietary products using emerging technologies, we aim to address Africa’s unique challenges and provide scalable solutions.
-								</p>
+							<div className="lg:w-1/2 text-lg text-gray-700">
+								We build innovative software and digital tools for businesses and organizations. Through proactive development of proprietary products using emerging technologies, we aim to address Africa’s unique challenges and provide scalable solutions.
 							</div>
 						</div>
 					</div>
 
-					{/* Secondary Offerings */}
-					<div className="mt-12">
-						<h3 className="text-3xl font-semibold text-green-600">Secondary Offerings</h3>
-
-						{/* Collaborative Innovation */}
-						<div className="py-16 px-4 flex flex-col lg:flex-row-reverse items-center justify-center bg-white">
-							<div className="lg:w-1/2 mb-8 lg:mb-0 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
-								<Image
-									src="/images/program2.jpg"
-									alt="Collaborative Innovation"
-									width={600} // Adjusted width
-									height={400} // Adjusted height
-									className="w-full h-auto object-cover rounded-lg shadow-lg"
-								/>
-							</div>
-							<div className="lg:w-1/2 w-full">
-								<h4 className="text-2xl font-semibold">Collaborative Innovation</h4>
-								<p className="mt-6 text-gray-700 text-lg max-w-3xl mx-auto">
-									We work with startups, businesses, and individuals to transform innovative ideas into functional products that solve real-world challenges. Together, we can create a sustainable future for Africa through collaborative innovation.
-								</p>
-							</div>
+					{/* Collaborative Innovation */}
+					<div className="mb-12 py-16 px-4 flex flex-col lg:flex-row-reverse items-center justify-center bg-white rounded-lg shadow-xl">
+						<div className="lg:w-1/2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+							<Image
+								src="/images/program2.jpg"
+								alt="Collaborative Innovation"
+								width={600}
+								height={400}
+								className="w-full h-auto object-cover rounded-lg shadow-lg"
+							/>
 						</div>
-
-						{/* Digital Literacy Programs */}
-						<div className="mt-12 flex flex-col lg:flex-row items-center justify-center gap-12">
-							<div className="lg:w-1/2 mb-8 lg:mb-0 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
-								<Image
-									src="/images/program4.jpg"
-									alt="Digital Literacy"
-									width={600} // Adjusted width
-									height={400} // Adjusted height
-									className="rounded-lg shadow-xl w-full h-auto object-cover max-h-[400px] lg:max-h-[500px]"
-								/>
-							</div>
-							<div className="lg:w-1/2 w-full">
-								<h4 className="text-2xl font-semibold">Digital Literacy Programs</h4>
-								<p className="mt-6 text-gray-700 text-lg max-w-3xl mx-auto">
-									We provide foundational tech education to youth and communities, empowering them with the skills to thrive in a rapidly advancing digital economy. Our programs aim to bridge the digital divide and unlock new opportunities.
-								</p>
-							</div>
+						<div className="lg:w-1/2 text-lg text-gray-700">
+							<h4 className="text-2xl font-semibold mb-4">Collaborative Innovation</h4>
+							We work with startups, businesses, and individuals to transform innovative ideas into functional products that solve real-world challenges. Together, we can create a sustainable future for Africa through collaborative innovation.
 						</div>
+					</div>
 
-						{/* Community Engagement */}
-						<div className="py-16 px-4 flex flex-col lg:flex-row-reverse items-center justify-center bg-white">
-							<div className="lg:w-1/2 mb-8 lg:mb-0 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
-								<Image
-									src="/images/program3.jpg"
-									alt="Community Engagement"
-									width={600} // Adjusted width
-									height={400} // Adjusted height
-									className="w-full h-auto object-cover rounded-lg shadow-lg"
-								/>
-							</div>
-							<div className="lg:w-1/2 w-full">
-								<h4 className="text-2xl font-semibold">Community Engagement</h4>
-								<p className="mt-6 text-gray-700 text-lg max-w-3xl mx-auto">
-									We foster innovation through community engagement by organizing workshops, hackathons, and events that inspire collaboration, knowledge sharing, and problem-solving. Together, we are creating a platform for Africa’s innovators.
-								</p>
-							</div>
+					{/* Digital Literacy */}
+					<div className="mt-12 flex flex-col lg:flex-row items-center justify-center gap-12">
+						<div className="lg:w-1/2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+							<Image
+								src="/images/program4.jpg"
+								alt="Digital Literacy"
+								width={600}
+								height={400}
+								className="rounded-lg shadow-xl w-full h-auto object-cover max-h-[400px] lg:max-h-[500px]"
+							/>
+						</div>
+						<div className="lg:w-1/2 text-lg text-gray-700">
+							<h4 className="text-2xl font-semibold mb-4">Digital Literacy Programs</h4>
+							We provide foundational tech education to youth and communities, empowering them with the skills to thrive in a rapidly advancing digital economy. Our programs aim to bridge the digital divide and unlock new opportunities.
+						</div>
+					</div>
+
+					{/* Community Engagement */}
+					<div className="py-16 px-4 flex flex-col lg:flex-row-reverse items-center justify-center bg-white rounded-lg shadow-xl mt-12">
+						<div className="lg:w-1/2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+							<Image
+								src="/images/program3.jpg"
+								alt="Community Engagement"
+								width={600}
+								height={400}
+								className="w-full h-auto object-cover rounded-lg shadow-lg"
+							/>
+						</div>
+						<div className="lg:w-1/2 text-lg text-gray-700">
+							<h4 className="text-2xl font-semibold mb-4">Community Engagement</h4>
+							We foster innovation through community engagement by organizing workshops, hackathons, and events that inspire collaboration, knowledge sharing, and problem-solving. Together, we are creating a platform for Africa’s innovators.
 						</div>
 					</div>
 				</div>
 			</section>
 
-
-			{/* Our Team Section */}
+			{/* Meet Our Team Section */}
 			<section className="py-16 px-4 bg-white">
 				<div className="container mx-auto text-center">
-					<h2 className="text-4xl font-bold flex items-center justify-center gap-3">
+					<h2 className="text-4xl font-bold flex items-center justify-center gap-3 mb-12">
 						<AiOutlineTeam className="text-green-500" /> Meet Our Team
 					</h2>
-					<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 						{[
 							{
 								name: 'Sulley Abdul Latif',
@@ -175,13 +152,13 @@ const AboutPage = () => {
 						].map((member, index) => (
 							<div
 								key={index}
-								className="bg-gray-100 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
+								className="bg-gray-100 p-6 rounded-lg shadow-md hover:scale-105 transition-transform"
 							>
 								<Image
 									src={member.image}
 									alt={member.name}
-									width={150} // Set fixed width
-									height={150} // Set fixed height
+									width={150}
+									height={150}
 									className="mx-auto rounded-full border-4 border-green-500"
 								/>
 								<h3 className="mt-4 text-xl font-semibold">{member.name}</h3>
@@ -192,9 +169,9 @@ const AboutPage = () => {
 				</div>
 			</section>
 
-			{/* Sustainability and Impact Section */}
+			{/* Sustainability & Impact Section */}
 			<section className="bg-gray-50 py-16 px-4 text-center">
-				<h2 className="text-4xl font-bold">Sustainability & Impact</h2>
+				<h2 className="text-4xl font-bold mb-6">Sustainability & Impact</h2>
 				<p className="mt-4 text-gray-700 text-lg max-w-3xl mx-auto">
 					We are committed to creating sustainable impact through:
 				</p>
@@ -225,10 +202,11 @@ const AboutPage = () => {
 					))}
 				</div>
 			</section>
+
 			{/* Call to Action Section */}
 			<section className="bg-green-500 text-white py-16 px-4">
 				<div className="container mx-auto text-center">
-					<h2 className="text-4xl font-bold flex items-center justify-center gap-3">
+					<h2 className="text-4xl font-bold flex items-center justify-center gap-3 mb-6">
 						<MdOutlineContactMail className="text-white" /> Join Us in Making a Difference
 					</h2>
 					<p className="mt-4 text-lg max-w-2xl mx-auto">

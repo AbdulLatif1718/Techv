@@ -21,7 +21,7 @@
 	max-width: var(--max-width);
 	overflow: hidden;
 	margin: 0 auto;
-	height: 5.625rem;
+	height: 3.625rem;
 }
 
 .logo {
@@ -93,9 +93,9 @@ nav a.worklink {
 }
 
 @media (max-width: 768px) {
-	.nav .contact {
-		display: none;
-	}
+	/* .nav .contact {
+	  display: none;
+	} */
 
 	.nav li {
 		margin-left: 1rem;
@@ -105,7 +105,6 @@ nav a.worklink {
 }
 
 /* Side Menu */
-
 .customMenu {
 	display: none;
 	cursor: pointer;
@@ -205,4 +204,81 @@ nav a.worklink {
 
 .header select:hover {
 	border: 0.4px solid rgb(59, 153, 252);
+}
+
+/* Tablet-specific CSS */
+@media (max-width: 1024px) {
+	.header .container {
+		padding: 0 4%;
+		height: 4rem;
+		/* Adjust height for tablets */
+	}
+
+	.logo {
+		width: 14rem;
+		height: 2.75rem;
+		min-width: 13.75rem;
+		min-height: 2.75rem;
+	}
+
+	.nav li {
+		margin-left: 1.5rem;
+		font-size: 1.15rem;
+	}
+
+	.nav a {
+		min-width: 5rem;
+	}
+
+	.nav ul {
+		gap: 1.5rem;
+	}
+
+	.side-nav {
+		width: 13.75rem;
+		/* Compact side nav for tablets */
+	}
+
+	.customMenu {
+		display: block;
+	}
+
+	.nav.showNav {
+		display: none;
+	}
+
+	.logo img {
+		width: 10.5rem;
+		height: 2.5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.header .container {
+		padding: 0 3%;
+		/* Further reduce padding on smaller tablets */
+	}
+
+	.logo {
+		width: 13.5rem;
+		height: 2.5rem;
+	}
+
+	.nav li {
+		margin-left: 1.2rem;
+		font-size: 1.1rem;
+	}
+
+	.nav ul {
+		gap: 1rem;
+	}
+
+	.nav a {
+		min-width: 4.5rem;
+	}
+
+	.side-nav {
+		width: 13.25rem;
+		/* Smaller side nav for very small tablets */
+	}
 }
