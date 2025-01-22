@@ -35,11 +35,11 @@
 
 @media (max-width: 568px) {
 	.logo {
-		width: 12.825rem;
-		height: 2.125rem;
-		min-width: 12.625rem;
-		min-height: 2.125rem;
-		margin-left: -15px !important;
+		width: 12.625rem;
+		height: 2.25rem;
+		min-width: 12.525rem;
+		min-height: 2.25rem;
+		margin-left: -6px !important;
 	}
 }
 
