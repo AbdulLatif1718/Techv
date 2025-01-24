@@ -47,7 +47,7 @@ const MainNavigation = () => {
                   href="/"
                   className={router.pathname === "/" ? classes.active : ""}
                 >
-                  {t('home')}
+                  {t('Home')}
                 </Link>
               </li>
               <li>
@@ -55,7 +55,7 @@ const MainNavigation = () => {
                   href="/about-us"
                   className={`${classes.worklink} ${router.pathname === "/about-us" ? classes.active : ""}`}
                 >
-                  {t('about us')}
+                  {t('About Us')}
                 </Link>
               </li>
               {/* <li>
@@ -71,7 +71,7 @@ const MainNavigation = () => {
                   href="/contact"
                   className={`${classes.contact} ${router.pathname === "/contact" ? classes.active : ""}`}
                 >
-                  {t('contact')}
+                  {t('Contact')}
                 </Link>
               </li>
               <li className="select">

@@ -6,7 +6,7 @@ import { AiOutlineTeam } from 'react-icons/ai';
 
 const AboutPage = () => {
 	return (
-		<div className="overflow-x-hidden mt-20">
+		<div className="overflow-x-hidden mt-15">
 			{/* Hero Section */}
 			<section className="relative bg-gray-900 text-white flex items-center justify-center bg-cover bg-center bg-no-repeat"
 				style={{ backgroundImage: `url('/images/bg1.jpg')`, height: '70vh', backgroundSize: 'cover' }}
