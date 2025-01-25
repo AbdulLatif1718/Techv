@@ -6,7 +6,7 @@ import { AiOutlineTeam } from 'react-icons/ai';
 
 const AboutPage = () => {
 	return (
-		<div className="overflow-x-hidden mt-15">
+		<div className="overflow-x-hidden mt-16">
 			{/* Hero Section */}
 			<section className="relative bg-gray-900 text-white flex items-center justify-center bg-cover bg-center bg-no-repeat"
 				style={{ backgroundImage: `url('/images/bg1.jpg')`, height: '70vh', backgroundSize: 'cover' }}
@@ -166,8 +166,18 @@ const AboutPage = () => {
 							</div>
 						))}
 					</div>
+					{/* View All Link */}
+					<div className="mt-8">
+						<Link href="/team">  {/* Use Link directly with the href prop */}
+							<span className="text-lg text-green-500 font-semibold hover:underline cursor-pointer">
+								View All
+							</span>  {/* Instead of <a>, use a <span> */}
+						</Link>
+					</div>
 				</div>
 			</section>
+
+
 
 			{/* Sustainability & Impact Section */}
 			<section className="bg-gray-50 py-16 px-4 text-center">
