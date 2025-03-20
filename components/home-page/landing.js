@@ -130,7 +130,7 @@ const Landing = () => {
           <div className="lg:order-1">
             <h2 className="text-4xl font-bold mb-6 text-green-800">Our Mission</h2>
             <p className="text-lg text-gray-700 mb-8">
-              We are leveraging <strong>emerging technologies</strong> to solve Africa's most pressing problems in the following sectors:
+              We are leveraging <strong>emerging technologies</strong> to solve Africa&apos;s most pressing problems in the following sectors:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
