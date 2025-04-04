@@ -78,12 +78,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <nav className="flex justify-center space-x-8 py-4 bg-gray-200">
+    <div className="bg-gray-100 min-h-screen">
+      <nav className="flex justify-center space-x-8 py-4 bg-green-200">
         <button
           onClick={() => setActiveForm("partnership")}
           className={`text-lg font-medium ${
-            activeForm === "partnership" ? "text-blue-600" : "text-gray-600"
+            activeForm === "partnership" ? "text-green-600" : "text-gray-600"
           }`}
         >
           Partnership
@@ -91,7 +91,7 @@ const Contact = () => {
         <button
           onClick={() => setActiveForm("volunteering")}
           className={`text-lg font-medium ${
-            activeForm === "volunteering" ? "text-blue-600" : "text-gray-600"
+            activeForm === "volunteering" ? "text-green-600" : "text-gray-600"
           }`}
         >
           Volunteering
@@ -99,7 +99,7 @@ const Contact = () => {
         <button
           onClick={() => setActiveForm("learning")}
           className={`text-lg font-medium ${
-            activeForm === "learning" ? "text-blue-600" : "text-gray-600"
+            activeForm === "learning" ? "text-green-600" : "text-gray-600"
           }`}
         >
           Learning
@@ -204,7 +204,7 @@ const Contact = () => {
                   ></div>
                 </div>
                 <button
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all"
+                  className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-all"
                   type="submit"
                 >
                   Submit Partnership
@@ -297,7 +297,7 @@ const Contact = () => {
                   ></div>
                 </div>
                 <button
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all"
+                  className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-all"
                   type="submit"
                 >
                   Submit Volunteering

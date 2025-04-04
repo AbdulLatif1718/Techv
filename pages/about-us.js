@@ -1,228 +1,281 @@
+import Head from "next/head";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaRegLightbulb, FaUsers, FaMapMarkerAlt, FaHandshake, FaLaptopCode, FaLeaf } from 'react-icons/fa';
-import { MdOutlineContactMail } from 'react-icons/md';
-import { AiOutlineTeam } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import { FaLinkedin, FaTwitter, FaGithub, FaGlobe } from "react-icons/fa";
 
-const AboutPage = () => {
+const team = [
+  {
+    name: "Sulley Abdul Latif",
+    role: "Co-Founder & CEO",
+    image: "/images/sulley.webp",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "#",
+      website: "#"
+    }
+  },
+  {
+    name: "Abdul-Moomin Is-Haq",
+    role: "Co-Founder & CTO",
+    image: "/images/ishaq.webp",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "#"
+    }
+  },
+  {
+    name: "Abdallah Mustapha",
+    role: "COO",
+    image: "/images/mustapha.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "#"
+    }
+  },
+  // {
+  //   name: "Linda Okoro",
+  //   role: "Education Specialist",
+  //   image: "/images/team/linda.webp",
+  // },
+];
+// Social media icon components
+const SocialIcon = ({ href, children }) => (
+  <Link href={href} passHref legacyBehavior>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-green-700 hover:text-green-900 transition-colors"
+      aria-label="Social media link"
+    >
+      {children}
+    </a>
+  </Link>
+);
+
+const About = () => {
   return (
-    <div className="overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-green-800 to-green-600">
-        <div className="absolute inset-0 z-0">
-          {/* Animated Particles */}
-          <video
-            autoPlay
-            muted
-            loop
-            className="w-full h-full object-cover opacity-50"
-          >
-            <source src="/images/particles.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div className="relative z-10 bg-green-900 bg-opacity-70 p-8 text-center rounded-lg shadow-lg max-w-4xl mx-4">
+    <>
+      <Head>
+        <title>About Us - TechVerge Africa</title>
+        <meta
+          name="description"
+          content="Learn more about how we're empowering African youth and solving Africa’s biggest challenges through technology."
+        />
+      </Head>
+
+      {/* Hero Section with Optimized Video */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-800 to-green-600 text-white overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 z-0"
+        >
+          <source src="/videos/particles.webm" type="video/mp4" />
+        </video>
+        <div className="relative z-10 p-8 rounded-xl max-w-4xl text-center">
           <motion.h1
-            className="text-5xl sm:text-6xl font-extrabold text-white leading-tight"
-            initial={{ opacity: 0, y: -50 }}
+            className="text-4xl sm:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
           >
-            About Us
+            Empowering Africa Through Technology & Innovation
           </motion.h1>
           <motion.p
-            className="mt-4 text-lg sm:text-xl text-gray-200"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            className="text-lg sm:text-xl text-gray-200"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
           >
-            TechVerge Africa is dedicated to empowering African youth and driving global innovation. We harness emerging technologies to create solutions that tackle real-world challenges, foster collaboration, and provide transformative education for the next generation of leaders.
+            We&apos;re on a mission to build an Africa where everyone will want to
+            live — a continent of opportunity, innovation, and inclusion.
           </motion.p>
         </div>
       </section>
 
-      {/* Mission and Vision Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-green-800 flex items-center justify-center gap-3 mb-12">
-            <FaRegLightbulb className="text-green-500" /> Our Mission and Vision
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Mission Card */}
-            <motion.div
-              className="bg-green-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <FaRegLightbulb className="text-green-500 text-5xl mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-green-800 mb-4">Our Mission</h3>
-              <p className="text-lg text-gray-700">
-                To empower African youth and drive global innovation by leveraging emerging technologies to create impactful solutions, foster collaboration, and provide transformative education.
-              </p>
-            </motion.div>
+      {/* Why We Exist Section */}
+      <section className="py-20 px-6 bg-white text-gray-800">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Image
+              src="/images/about-vision.webp"
+              alt="Empowering youth through innovation"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-xl"
+              loading="lazy"
+            />
+          </motion.div>
 
-            {/* Vision Card */}
-            <motion.div
-              className="bg-green-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <FaMapMarkerAlt className="text-green-500 text-5xl mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-green-800 mb-4">Our Vision</h3>
-              <p className="text-lg text-gray-700">
-                To become the greatest lab for innovation in Africa, where businesses, individuals, and startups bring their ideas and challenges, and we build solutions that create impact globally.
-              </p>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 className="text-3xl font-bold mb-4 text-green-800">
+              Why We Exist
+            </h2>
+            <p className="mb-4 text-lg">
+              Africa is rich with talent and potential — yet many face barriers.
+              At TechVerge Africa, we believe technology is the key to unlocking
+              that potential. We work at the intersection of innovation,
+              education, and impact.
+            </p>
+            <ul className="list-disc ml-5 text-green-700 font-medium space-y-2">
+              <li>AI-powered learning tools.</li>
+              <li>Smart AgriTech solutions.</li>
+              <li>AI diagnostics for healthcare.</li>
+              <li>Startup Incubation Labs & Hackathons.</li>
+              <li>Creating a tech-savvy generation.</li>
+            </ul>
+          </motion.div>
         </div>
       </section>
 
-      {/* Core Focus & Offerings Section */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-green-800 flex items-center justify-center gap-3 mb-12">
-            <FaHandshake className="text-green-500" /> Core Focus & Offerings
+      {/* Core Values */}
+      <section className="py-20 px-6 bg-green-50 text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-green-700">
+            Our Core Values
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: <FaLaptopCode className="text-green-500 text-5xl mx-auto mb-4" />,
-                title: "Tech Product Development",
-                description: "We build innovative software and digital tools for businesses and organizations to solve real-world challenges.",
+                title: "Innovation",
+                description: "Solving problems creatively using bold ideas.",
               },
               {
-                icon: <FaHandshake className="text-green-500 text-5xl mx-auto mb-4" />,
-                title: "Collaborative Innovation",
-                description: "We work with startups, businesses, and individuals to turn ideas into functional products.",
+                title: "Empowerment",
+                description: "Equipping youth to shape their future.",
               },
               {
-                icon: <FaUsers className="text-green-500 text-5xl mx-auto mb-4" />,
-                title: "Digital Literacy",
-                description: "We provide basic tech education to empower youth and communities with the skills to succeed.",
+                title: "Collaboration",
+                description: "Amplifying impact through strong partnerships.",
               },
-            ].map((item, index) => (
+              {
+                title: "Sustainability",
+                description: "Driving long-term change with eco-consciousness.",
+              },
+              {
+                title: "Inclusion",
+                description: "Opportunities for all, regardless of background.",
+              },
+              {
+                title: "Excellence",
+                description: "World-class quality in everything we do.",
+              },
+            ].map((value, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all"
-                initial={{ opacity: 0, y: 50 }}
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: index * 0.2 }}
+                viewport={{ once: true }}
               >
-                {item.icon}
-                <h3 className="text-2xl font-bold text-green-800 mb-4">{item.title}</h3>
-                <p className="text-lg text-gray-700">{item.description}</p>
+                <h3 className="text-xl font-bold text-green-800 mb-2">
+                  {value.title}
+                </h3>
+                <p className="text-gray-700">{value.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Meet Our Team Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-green-800 flex items-center justify-center gap-3 mb-12">
-            <AiOutlineTeam className="text-green-500" /> Meet Our Team
+      {/* Team Section */}
+      <section className="py-20 px-6 bg-white text-center">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-green-700 mb-12">
+            Meet the Team
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Sulley Abdul Latif',
-                role: 'Co-founder & CEO',
-                icon: <AiOutlineTeam className="text-green-500 text-5xl mx-auto mb-4" />,
-              },
-              {
-                name: 'Abdul-Moomin Is-Haq',
-                role: 'Co-founder & CTO',
-                icon: <AiOutlineTeam className="text-green-500 text-5xl mx-auto mb-4" />,
-              },
-              {
-                name: 'Abdallah Mustapha',
-                role: 'Head of Programs',
-                icon: <AiOutlineTeam className="text-green-500 text-5xl mx-auto mb-4" />,
-              },
-            ].map((member, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {team.map((member, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-100 p-8 rounded-lg shadow-md hover:scale-105 transition-transform"
-                initial={{ opacity: 0, y: 50 }}
+                className="bg-green-100 rounded-xl p-6 shadow hover:shadow-lg transition"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: index * 0.2 }}
+                viewport={{ once: true }}
               >
-                {member.icon}
-                <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-gray-600">{member.role}</p>
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={200}
+                  height={200}
+                  className="rounded-full mx-auto mb-4"
+                  loading="lazy"
+                />
+                <h3 className="text-xl font-semibold text-green-800 mb-2">
+                  {member.name}
+                </h3>
+                <p className="text-green-700 mb-4">{member.role}</p>
+
+                {/* Social Media Links */}
+                <div className="flex justify-center space-x-4">
+                  {member.social.linkedin && (
+                    <SocialIcon href={member.social.linkedin}>
+                      <FaLinkedin className="h-6 w-6" />
+                    </SocialIcon>
+                  )}
+                  {member.social.twitter && (
+                    <SocialIcon href={member.social.twitter}>
+                      <FaTwitter className="h-6 w-6" />
+                    </SocialIcon>
+                  )}
+                  {member.social.github && (
+                    <SocialIcon href={member.social.github}>
+                      <FaGithub className="h-6 w-6" />
+                    </SocialIcon>
+                  )}
+                  {member.social.website && (
+                    <SocialIcon href={member.social.website}>
+                      <FaGlobe className="h-6 w-6" />
+                    </SocialIcon>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
-          <div className="mt-8">
-            <Link href="/team">
-              <span className="text-lg text-green-500 font-semibold hover:underline cursor-pointer">
-                View All
-              </span>
-            </Link>
-          </div>
+          <Link
+            href="/team"
+            className="mt-10 inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors duration-300"
+          >
+            View More
+          </Link>
         </div>
       </section>
 
-      {/* Sustainability & Impact Section */}
-      <section className="bg-gray-50 py-16 px-4 text-center">
-        <h2 className="text-4xl font-bold text-green-800 mb-6">Sustainability & Impact</h2>
-        <p className="mt-4 text-gray-700 text-lg max-w-3xl mx-auto">
-          We are committed to creating sustainable impact through:
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          {[
-            {
-              icon: <FaLeaf className="text-green-500 text-5xl mx-auto mb-4" />,
-              title: 'Eco-Friendly Practices',
-              description: 'Implementing sustainable tech and green solutions.',
-            },
-            {
-              icon: <FaMapMarkerAlt className="text-green-500 text-5xl mx-auto mb-4" />,
-              title: 'Long-Term Impact',
-              description: 'Designing programs that create lasting change in communities.',
-            },
-            {
-              icon: <FaUsers className="text-green-500 text-5xl mx-auto mb-4" />,
-              title: 'Inclusive Growth',
-              description: 'Ensuring equal opportunities for all youth, regardless of background.',
-            },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: index * 0.2 }}
-            >
-              {item.icon}
-              <h3 className="text-xl font-semibold text-green-600">{item.title}</h3>
-              <p className="mt-2 text-gray-600">{item.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="bg-gradient-to-br from-green-700 to-green-500 text-white py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold flex items-center justify-center gap-3 mb-6">
-            <MdOutlineContactMail className="text-white" /> Join Us in Making a Difference
+      {/* CTA */}
+      <section className="py-20 px-6 bg-gradient-to-br from-green-700 to-green-500 text-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Join Us in Shaping the Future
           </h2>
-          <p className="mt-4 text-lg max-w-2xl mx-auto">
-            Become a part of our journey to empower African youth through technology. Whether you want to learn, partner, or volunteer, there’s a place for you at TechVerge Africa.
+          <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto">
+            Whether you&apos;re a student, developer, mentor, partner — there&apos;s a
+            place for you here.
           </p>
-          <button className="mt-6 px-8 py-4 bg-white text-green-500 rounded-lg hover:bg-gray-100 transition-all text-lg">
-            <Link href="/contact">
-              <span>Get Involved</span>
-            </Link>
+          <button
+            onClick={() => (window.location.href = "/contact")}
+            className="mt-4 px-8 py-3 bg-white text-green-700 font-semibold rounded-full hover:bg-gray-100 transition"
+          >
+            Get Involved
           </button>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
-export default AboutPage;
+export default About;
