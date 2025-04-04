@@ -11,12 +11,13 @@ class MyDocument extends Document {
         <Head />
         <body>
           <Main />
-          <NextScript />
+          <NextScript
+            strategy="beforeInteractive"
+            src="https://cdn.techverge.africa/analytics.js"
+          />
           {/* // for add Portal */}
           <div id="backdrop--root"></div>
           <div id="modal--overlay--root"></div>
-          strategy="beforeInteractive"
-          src="https://cdn.techverge.africa/analytics.js"
         </body>
       </Html>
     );
