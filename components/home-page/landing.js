@@ -16,7 +16,11 @@ const Landing = () => {
   const router = useRouter();
   const videoRef = useRef(null);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const videoSources = ["/videos/video1.webm", "/videos/video2.webm"];
+  const videoSources = [
+    "https://ik.imagekit.io/qge16wvk7/video1.webm",
+    "https://ik.imagekit.io/qge16wvk7/video2.webm"
+  ];
+  
   const missionRef = useRef(null);
   const missionInView = useInView(missionRef, {
     once: true,

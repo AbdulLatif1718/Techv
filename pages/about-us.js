@@ -77,7 +77,7 @@ const About = () => {
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover opacity-50 z-0"
         >
-          <source src="/videos/particles.webm" type="video/mp4" />
+          <source src="https://ik.imagekit.io/qge16wvk7/particles.webm" type="video/mp4" />
         </video>
         <div className="relative z-10 p-8 rounded-xl max-w-4xl text-center">
           <motion.h1
