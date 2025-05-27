@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
 					<title>TechVerge Africa</title>
 					<meta
 						name='description'
-						content='TechVerge Africa is a startup focused on empowering African youth through accessible technology education. We aim to bridge the gap between talent and opportunity, helping young minds develop skills, build tech solutions, and drive positive change.'
+						content='TechVerge Africa is a startup solving Africa&apos;s most pressing challenges through technology. '
 					/>
 				</Head>
 

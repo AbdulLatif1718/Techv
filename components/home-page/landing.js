@@ -18,16 +18,15 @@ const Landing = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoSources = [
     "https://ik.imagekit.io/qge16wvk7/video1.webm",
-    "https://ik.imagekit.io/qge16wvk7/video2.webm"
+    "https://ik.imagekit.io/qge16wvk7/video2.webm",
   ];
-  
+
   const missionRef = useRef(null);
   const missionInView = useInView(missionRef, {
     once: true,
     margin: "0px 0px -100px 0px",
   });
 
-  // Video handling
   const handleVideoEnd = () => {
     setCurrentVideoIndex((prev) => (prev + 1) % videoSources.length);
   };
@@ -52,7 +51,7 @@ const Landing = () => {
         <link rel="preload" as="video" href={videoSources[0]} />
       </Head>
 
-      {/* Optimized Hero Section */}
+      {/* Hero Section */}
       <div className="relative min-h-screen bg-gradient-to-br from-green-800 to-green-600">
         <div className="absolute inset-0 z-0">
           <video
@@ -100,8 +99,45 @@ const Landing = () => {
         </div>
       </div>
 
+      {/* 🔥 Cooking Project Section */}
+      <section className="relative py-16 px-4 bg-gradient-to-br from-yellow-100 via-orange-200 to-red-200">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2
+            className="text-4xl font-extrabold text-orange-800 tracking-wide mb-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            🍲 Cooking Project
+          </motion.h2>
+          <p className="text-lg text-orange-900 mb-6">
+            Something spicy is brewing in the labs! We&apos;re combining the power of{" "}
+            <strong>AgriTech</strong> and <strong>FinTech</strong> to deliver
+            game-changing solutions for farmers and communities across Africa.
+          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex justify-center"
+          >
+            <Image
+              src="/images/cooking-pot.webp"
+              alt="Cooking Project Illustration"
+              width={320}
+              height={200}
+              className="animate-pulse"
+              loading="lazy"
+            />
+          </motion.div>
+          <p className="mt-6 text-orange-700 font-semibold">
+            #AgriTech #FinTech #ComingSoon
+          </p>
+        </div>
+      </section>
+
       {/* Mission Section */}
-      <section className="py-20 px-4 bg-white" ref={missionRef}>
+<section className="py-20 px-4 bg-white" ref={missionRef}>
         <motion.div
           className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           animate={missionInView ? { opacity: 1, y: 0 } : {}}
@@ -182,9 +218,7 @@ const Landing = () => {
           </div>
         </motion.div>
       </section>
-
-      {/* Programs Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-green-700 to-green-500">
+          <section className="py-20 px-4 bg-gradient-to-br from-green-700 to-green-500">
         <h2 className="text-4xl font-bold text-center text-white mb-12">
           We Also Do These
         </h2>

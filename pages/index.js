@@ -15,14 +15,14 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="TechVerge Africa is a startup solving Africa's most pressing challenges through technology — transforming the continent into a thriving hub where everyone will want to live. As a pan-African innovation leader, we deliver tech education, collaborative R&D, and sustainable solutions to empower communities."
+          content="TechVerge Africa is a startup solving Africa's most pressing challenges through technology."
         />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://techverge.africa/" />
         <meta property="og:title" content="TechVerge Africa | Leading Digital Innovation Ecosystem" />
-        <meta property="og:description" content="Developing Africa's tech future through AI education, smart agriculture solutions, and healthtech innovations. Join our innovation community." />
+        <meta property="og:description" content="Developing Africa's tech future through robotics, smart agriculture solutions, edutech, Fintech,healthtech innovations and smart infrastructures. Join our innovation community." />
         <meta property="og:image" content="https://cdn.techverge.africa/og-image.jpg" />
 
         {/* Twitter */}

@@ -10,9 +10,9 @@ const team = [
     role: "Co-Founder & CEO",
     image: "/images/sulley.webp",
     social: {
-      linkedin: "#",
-      twitter: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/sulley-abdul-latif-aa79b3222 ",
+      twitter: "https://x.com/MrLogic1718",
+      github: "https://github.com/AbdulLatif1718",
       website: "#"
     }
   },
@@ -95,7 +95,7 @@ const About = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             We&apos;re on a mission to build an Africa where everyone will want to
-            live — a continent of opportunity, innovation, and inclusion.
+            live, a continent of opportunity, innovation, and inclusion.
           </motion.p>
         </div>
       </section>
@@ -127,7 +127,7 @@ const About = () => {
               Why We Exist
             </h2>
             <p className="mb-4 text-lg">
-              Africa is rich with talent and potential — yet many face barriers.
+              Africa is rich with talent and potential, yet many face barriers.
               At TechVerge Africa, we believe technology is the key to unlocking
               that potential. We work at the intersection of innovation,
               education, and impact.
@@ -135,6 +135,7 @@ const About = () => {
             <ul className="list-disc ml-5 text-green-700 font-medium space-y-2">
               <li>AI-powered learning tools.</li>
               <li>Smart AgriTech solutions.</li>
+              <li>Inclusive Fintech solutions.</li>
               <li>AI diagnostics for healthcare.</li>
               <li>Startup Incubation Labs & Hackathons.</li>
               <li>Creating a tech-savvy generation.</li>
