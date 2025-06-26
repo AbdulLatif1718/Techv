@@ -17,8 +17,14 @@ const Landing = () => {
   const videoRef = useRef(null);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoSources = [
-    "https://ik.imagekit.io/qge16wvk7/video1.webm",
-    "https://ik.imagekit.io/qge16wvk7/video2.webm",
+    {
+      webm: "https://ik.imagekit.io/qge16wvk7/video1.webm",
+      mp4: "https://ik.imagekit.io/qge16wvk7/video1.mp4"
+    },
+    {
+      webm: "https://ik.imagekit.io/qge16wvk7/video2.webm",
+      mp4: "https://ik.imagekit.io/qge16wvk7/video2.mp4"
+    }
   ];
 
   const missionRef = useRef(null);
@@ -60,15 +66,17 @@ const Landing = () => {
             className="absolute inset-0 w-full h-full object-cover opacity-50"
             muted
             playsInline
-            preload="metadata"
+            autoPlay
+            loop
+            preload="auto"
             onEnded={handleVideoEnd}
+            playsinline="true"
+            webkit-playsinline="true"
             aria-label="Background video showing our work in action"
           >
-            <source src={videoSources[currentVideoIndex]} type="video/webm" />
-            <source
-              src={videoSources[currentVideoIndex].replace(".webm", ".mp4")}
-              type="video/mp4"
-            />
+            <source src={videoSources[currentVideoIndex].mp4} type="video/mp4" />
+            <source src={videoSources[currentVideoIndex].webm} type="video/webm" />
+            Your browser does not support the video tag.
           </video>
         </div>
 
