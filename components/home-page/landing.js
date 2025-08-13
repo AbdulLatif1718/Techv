@@ -3,28 +3,22 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { motion, useInView } from "framer-motion";
-import {
-  FaArrowRight,
-  FaLaptopCode,
-  FaCog,
-  FaUsers,
-  FaQuoteLeft,
-  FaQuoteRight,
-} from "react-icons/fa";
+import { FaArrowRight, FaLaptopCode, FaCog, FaUsers, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const Landing = () => {
   const router = useRouter();
   const videoRef = useRef(null);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
   const videoSources = [
     {
       webm: "https://ik.imagekit.io/qge16wvk7/video1.webm",
-      mp4: "https://ik.imagekit.io/qge16wvk7/video1.mp4"
+      mp4: "https://ik.imagekit.io/qge16wvk7/video1.mp4",
     },
     {
       webm: "https://ik.imagekit.io/qge16wvk7/video2.webm",
-      mp4: "https://ik.imagekit.io/qge16wvk7/video2.mp4"
-    }
+      mp4: "https://ik.imagekit.io/qge16wvk7/video2.mp4",
+    },
   ];
 
   const missionRef = useRef(null);
@@ -48,30 +42,26 @@ const Landing = () => {
   return (
     <section className="relative overflow-hidden">
       <Head>
-        <title>Empowering African Youth Through Technology</title>
-        <meta
-          name="description"
-          content="Join us in building a brighter future through education and innovation."
-        />
+        <title>TechVerge Africa – Building the Africa Everyone Will Like to Live In</title>
+        <meta name="description" content="TechVerge Africa is a holding company backing bold, tech-driven ventures solving real problems across Africa." />
         <meta property="og:image" content="/images/og-image.webp" />
-        <link rel="preload" as="video" href={videoSources[0]} />
       </Head>
 
       {/* Hero Section */}
       <div className="relative min-h-screen bg-gradient-to-br from-green-800 to-green-600">
-        <div className="absolute inset-0 z-0">
+        {/* Responsive Video Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <video
             ref={videoRef}
             key={currentVideoIndex}
-            className="absolute inset-0 w-full h-full object-cover opacity-50"
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover opacity-50 
+                       sm:w-full sm:h-full sm:top-0 sm:left-0 sm:transform-none"
             muted
             playsInline
             autoPlay
             loop
             preload="auto"
             onEnded={handleVideoEnd}
-            playsinline="true"
-            webkit-playsinline="true"
             aria-label="Background video showing our work in action"
           >
             <source src={videoSources[currentVideoIndex].mp4} type="video/mp4" />
@@ -80,48 +70,46 @@ const Landing = () => {
           </video>
         </div>
 
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center text-white">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 text-center text-white">
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
+            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-6xl"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Building the Africa Everyone
-            <br />
+            Building the Africa Everyone <br className="hidden sm:block" />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-lime-400 to-green-500">
-              Will Like to Live
+              Will Like to Live In
             </span>
           </motion.h1>
 
           <motion.button
             onClick={() => router.push("/about-us")}
-            className="mt-8 px-8 py-3 bg-gradient-to-r from-lime-500 to-green-600 text-lg font-semibold rounded-full flex items-center space-x-2 hover:scale-105 transition-transform"
+            className="mt-6 sm:mt-8 px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-lime-500 to-green-600 
+                       text-base sm:text-lg font-semibold rounded-full flex items-center space-x-2 
+                       hover:scale-105 transition-transform duration-300 ease-in-out"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Learn more about our organization"
           >
-            <span>Learn More</span>
-            <FaArrowRight className="h-5 w-5" />
+            <span>Explore Our Ventures</span>
+            <FaArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
           </motion.button>
         </div>
       </div>
 
-      {/* 🔥 Cooking Project Section */}
-      <section className="relative py-16 px-4 bg-gradient-to-br from-yellow-100 via-orange-200 to-red-200">
+      {/* Ventures We Back */}
+      <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-100 via-orange-200 to-red-200">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
-            className="text-4xl font-extrabold text-orange-800 tracking-wide mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-orange-800 tracking-wide mb-4"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
           >
-            🍲 Cooking Project
+            🚀 Ventures We Back
           </motion.h2>
-          <p className="text-lg text-orange-900 mb-6">
-            Something spicy is brewing in the labs! We&apos;re combining the power of{" "}
-            <strong>AgriTech</strong> and <strong>FinTech</strong> to deliver
-            game-changing solutions for farmers and communities across Africa.
+          <p className="text-base sm:text-lg text-orange-900 mb-6">
+            We support bold startups solving real problems in Africa, from AgriTech and FinTech to AI, Web3, and Robotics. We&apos;re not just investors, we&apos;re builders and long-term partners.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -131,23 +119,21 @@ const Landing = () => {
           >
             <Image
               src="/images/cooking-pot.webp"
-              alt="Cooking Project Illustration"
+              alt="Ventures Illustration"
               width={320}
               height={200}
-              className="animate-pulse"
+              className="animate-pulse w-full max-w-xs sm:max-w-sm md:max-w-md h-auto"
               loading="lazy"
             />
           </motion.div>
-          <p className="mt-6 text-orange-700 font-semibold">
-            #AgriTech #FinTech #ComingSoon
-          </p>
+          <p className="mt-6 text-sm sm:text-base text-orange-700 font-semibold">#AgriTech #FinTech #AI #Web3 #MoreToCome</p>
         </div>
       </section>
 
       {/* Mission Section */}
-<section className="py-20 px-4 bg-white" ref={missionRef}>
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white" ref={missionRef}>
         <motion.div
-          className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
           animate={missionInView ? { opacity: 1, y: 0 } : {}}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
@@ -155,186 +141,117 @@ const Landing = () => {
           <div className="lg:order-2">
             <Image
               src="/images/mission.webp"
-              alt="Students learning technology"
+              alt="Mission illustration"
               width={600}
               height={400}
               className="rounded-lg shadow-2xl w-full h-auto"
               priority
-              placeholder="blur"
-              blurDataURL="/images/mission-blur.webp"
             />
           </div>
 
           <div className="lg:order-1">
-            <h2 className="text-4xl font-bold mb-6 text-green-800">
-              Our Mission
-            </h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Our mission is to harness{" "}
-              <strong>technology, creativity, and innovation</strong> to solve
-              real-life challenges across Africa, from:
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-green-800">Our Mission</h2>
+            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8">
+              At TechVerge Africa, we&apos;re building companies that create real change. Using technology, creativity, and deep local insight, we invest in solutions that make life better across the continent.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {[
-                {
-                  icon: "📚",
-                  title: "EdTech",
-                  description:
-                    "AI-driven education platforms for African youth.",
-                },
-                {
-                  icon: "💳",
-                  title: "FinTech",
-                  description: "Blockchain solutions for financial inclusion.",
-                },
-                {
-                  icon: "🏥",
-                  title: "HealthTech",
-                  description: "Telemedicine and AI diagnostics systems.",
-                },
-                {
-                  icon: "🌾",
-                  title: "AgriTech",
-                  description: "IoT solutions for sustainable farming.",
-                },
-                {
-                  icon: "🚀",
-                  title: "More & Beyond",
-                  description:
-                    "From smart cities to clean energy — we explore emerging tech to solve tomorrow’s problems.",
-                },
+                { icon: "💡", title: "Innovation-First", description: "We lead with ideas that push boundaries and deliver results." },
+                { icon: "🌍", title: "Africa-Centered", description: "Built by Africans, for Africans — with deep local understanding." },
+                { icon: "🤝", title: "Founder-Friendly", description: "We're long-term partners, not just funders." },
+                { icon: "💻", title: "Tech-Driven", description: "We back startups built on future-ready technology." },
+                { icon: "📈", title: "Impact-Led", description: "We care about numbers — but even more about people." },
               ].map((tech, index) => (
                 <motion.div
                   key={index}
-                  className="bg-green-50 p-6 rounded-lg hover:shadow-lg transition-all"
+                  className="bg-green-50 p-4 sm:p-6 rounded-lg hover:shadow-lg transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex items-center mb-4">
-                    <span className="text-3xl mr-4">{tech.icon}</span>
-                    <h3 className="text-xl font-bold text-green-800">
-                      {tech.title}
-                    </h3>
+                  <div className="flex items-center mb-3 sm:mb-4">
+                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">{tech.icon}</span>
+                    <h3 className="text-lg sm:text-xl font-bold text-green-800">{tech.title}</h3>
                   </div>
-                  <p className="text-gray-700">{tech.description}</p>
+                  <p className="text-sm sm:text-base text-gray-700">{tech.description}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </motion.div>
       </section>
-          <section className="py-20 px-4 bg-gradient-to-br from-green-700 to-green-500">
-        <h2 className="text-4xl font-bold text-center text-white mb-12">
-          We Also Do These
-        </h2>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* How We Operate */}
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-700 to-green-500">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white mb-8 sm:mb-12">How We Operate</h2>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {[
             {
-              title: "Tech Development",
+              title: "Venture Building",
               icon: <FaLaptopCode />,
-              description:
-                "Building the next generation of African tech leaders through hands-on training and development.",
+              description: "We build startups from scratch, from idea to launch, with hands-on support.",
             },
             {
-              title: "Innovation Labs",
+              title: "Startup Support",
               icon: <FaCog />,
-              description:
-                "Collaborative workshops, hackathons, and innovation challenges to solve real-world problems.",
+              description: "Mentorship, funding, and infrastructure to help our founders scale smart and fast.",
             },
             {
-              title: "Internships & Seminars",
+              title: "Tech Innovation",
               icon: <FaUsers />,
-              description:
-                "Providing internships and seminars that empower youth with practical skills and industry insights.",
+              description: "We apply AI, Web3, and Robotics to African challenges, with real results.",
             },
-          ].map((program, index) => (
+          ].map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white/10 backdrop-blur-lg p-8 rounded-lg shadow-lg hover:shadow-xl transition-all"
+              className="bg-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="flex justify-center mb-6 text-lime-400 text-4xl">
-                {program.icon}
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
-                {program.title}
-              </h3>
-              <p className="text-gray-200">{program.description}</p>
+              <div className="flex justify-center mb-4 sm:mb-6 text-lime-400 text-3xl sm:text-4xl">{item.icon}</div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">{item.title}</h3>
+              <p className="text-sm sm:text-base text-gray-200">{item.description}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-20 px-4 bg-white">
-        <h2 className="text-4xl font-bold text-center text-green-800 mb-12">
-        Our Valued Partners
-        </h2>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-          {["bee", "bomle", "logo12", "logo13"].map((logo, index) => (
-            <motion.div
-              key={index}
-              className="flex items-center justify-center p-4 bg-gray-100 rounded-lg hover:shadow-lg"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
-            >
-              <Image
-                src={`/images/${logo}.webp`}
-                alt={`Partner ${index + 1}`}
-                width={160}
-                height={90}
-                className="object-contain h-14 sm:h-20"
-                loading="lazy"
-                placeholder="blur"
-                blurDataURL="/logos/placeholder.webp"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-green-600 to-green-400">
-        <h2 className="text-4xl font-bold text-center text-white mb-12">
-          Success Stories
-        </h2>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Testimonials */}
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-600 to-green-400">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white mb-8 sm:mb-12">What Our Partners Say</h2>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {[
             {
-              quote: "TechVerge Africa is doing greate thing in Africa.",
-              author: "Kofi Paul",
+              quote: "TechVerge helped us launch faster and scale smarter. They're more than investors, they're partners.",
+              author: "Aisha Adewale, Founder at AgriNova",
             },
             {
-              quote: "Making real impact across Africa.",
-              author: "Jeje Micheal",
+              quote: "Their team gets Africa. They move fast, but with purpose.",
+              author: "David Mensah, CTO at PayBloc",
             },
             {
-              quote: "Proud to support this initiative.",
-              author: "Sarah Johnson",
+              quote: "Innovation with real-world impact, that's what TechVerge stands for.",
+              author: "Lilian Chukwu, Advisor at EduTech Labs",
             },
           ].map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-white/10 backdrop-blur-lg p-8 rounded-lg shadow-lg hover:shadow-xl"
+              className="bg-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
             >
-              <FaQuoteLeft className="text-lime-400 mb-4 text-2xl" />
-              <p className="text-gray-200 italic">{testimonial.quote}</p>
-              <FaQuoteRight className="text-lime-400 mt-4 ml-auto text-2xl" />
-              <p className="mt-4 font-bold text-white">{testimonial.author}</p>
+              <FaQuoteLeft className="text-lime-400 mb-3 sm:mb-4 text-xl sm:text-2xl" />
+              <p className="text-sm sm:text-base text-gray-200 italic">{testimonial.quote}</p>
+              <div className="flex justify-end">
+                <FaQuoteRight className="text-lime-400 mt-3 sm:mt-4 text-xl sm:text-2xl" />
+              </div>
+              <p className="mt-3 sm:mt-4 font-bold text-white text-sm sm:text-base">{testimonial.author}</p>
             </motion.div>
           ))}
         </div>

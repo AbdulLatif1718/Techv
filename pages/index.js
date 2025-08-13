@@ -8,14 +8,15 @@ export default function Home() {
     <Fragment>
       <Head>
         <meta charSet="UTF-8" />
-        <title>TechVerge Africa | Building Africa Everyone Would Want To Live Through Technology</title>
+        <title>TechVerge Africa | Building Africa Everyone Would Want To Live In Through Technology</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no"
         />
         <meta
           name="description"
-          content="TechVerge Africa is a startup solving Africa's most pressing challenges through technology."
+          content="TechVerge Africa is a holding company launching and scaling future-facing
+            startups tackling Africa's most urgent challenges, from food systems and finance to frontier technology."
         />
         
         {/* Open Graph / Facebook */}
@@ -29,7 +30,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://techverge.africa/" />
         <meta name="twitter:title" content="TechVerge Africa | Empowering Digital Creators" />
-        <meta name="twitter:description" content="Africa's hub for emerging tech development — AI labs, blockchain solutions, and youth innovation programs." />
+        <meta name="twitter:description" content="Africa's hub for emerging tech development, AI labs, blockchain solutions, and youth innovation programs." />
         <meta name="twitter:image" content="https://cdn.techverge.africa/twitter-card.jpg" />
 
         {/* Preconnect and Preload */}
