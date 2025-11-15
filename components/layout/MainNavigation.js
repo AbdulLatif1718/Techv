@@ -47,7 +47,7 @@ const MainNavigation = () => {
           <div className="relative w-40 h-16 cursor-pointer">
   <Link href="/">
     <Image
-      src="/images/mylogo.png"
+      src="/images/logotva.svg"
       alt="LOGO"
       layout="fill"
       objectFit="contain"
