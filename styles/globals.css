@@ -19,6 +19,16 @@ body {
 	overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
+/* Hide all scrollbars globally */
+* {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+}
+
 /********** Start global rules **********/
 *,
 *::after,
@@ -51,4 +61,50 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+/* Mobile optimizations */
+.touch-manipulation {
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.scrollbar-hide {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+/* Ensure scrollbars are hidden but scrolling still works */
+html {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+/* Prevent text selection on mobile for better UX */
+@media (max-width: 768px) {
+	* {
+		-webkit-tap-highlight-color: transparent;
+	}
+	
+	.window-controls {
+		-webkit-user-select: none;
+		user-select: none;
+	}
 }

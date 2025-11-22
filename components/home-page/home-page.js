@@ -1,14 +1,9 @@
 /** @format */
 
-import Landing from "./landing";
-import React from "react";
+import OSInterface from "../OS/OSInterface";
 
 const HomePageComponent = () => {
-	return (
-		<React.Fragment>
-			<Landing />
-		</React.Fragment>
-	);
+	return <OSInterface />;
 };
 
 export default HomePageComponent;
