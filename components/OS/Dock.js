@@ -101,7 +101,7 @@ const Dock = () => {
 
   return (
     <motion.div
-      className="fixed bottom-2 xs:bottom-3 sm:bottom-4 left-0 right-0 sm:left-1/2 sm:right-auto sm:transform sm:-translate-x-1/2 z-[999] w-full sm:max-w-4xl px-2 xs:px-4"
+      className="fixed bottom-2 xs:bottom-3 sm:bottom-4 left-0 right-0 sm:left-1/2 sm:right-auto sm:transform sm:-translate-x-1/2 z-[999]   sm:max-w-4xl px-2 xs:px-4"
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}
