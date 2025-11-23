@@ -38,7 +38,7 @@ export default function Home() {
         <link rel="preload" href="/videos/video1.webm" as="video" type="video/webm" />
         
         {/* Favicon Modernization */}
-        <link rel="icon" type="image/ico" sizes="192x192" href="/favicon3.ico" />
+        <link rel="icon" type="image/ico" sizes="192x192" href="/favicon2.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.webp" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
