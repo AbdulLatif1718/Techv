@@ -204,17 +204,17 @@ const Window = ({ id, title, children, position, size, maximized, zIndex }) => {
         zIndex,
         ...windowStyle,
       }}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.2 }}
+      initial={{ opacity: 0, scale: 0.95, y: 10 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95, y: 10 }}
+      transition={{ type: "spring", stiffness: 300, damping: 25 }}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
     >
-      <div className="w-full h-full bg-black/90 backdrop-blur-md border border-green-500/30 rounded-lg sm:rounded-lg shadow-2xl flex flex-col overflow-hidden">
+      <div className="w-full h-full bg-[#0a0a0a]/90 backdrop-blur-2xl border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden ring-1 ring-white/5">
         {/* Window Header */}
         <div 
-          className={`window-controls flex items-center justify-between px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r from-green-900/50 to-black/50 border-b border-green-500/30 ${!isMobile && !maximized ? 'cursor-move' : ''}`}
+          className={`window-controls flex items-center justify-between px-4 py-3 bg-white/5 border-b border-white/5 ${!isMobile && !maximized ? 'cursor-move' : ''}`}
           onMouseDown={(e) => {
             if (!maximized && !isMobile) {
               dispatch(setActiveWindow(id));
@@ -226,50 +226,46 @@ const Window = ({ id, title, children, position, size, maximized, zIndex }) => {
             }
           }}
         >
-          <div className="flex items-center space-x-1.5 xs:space-x-2">
-            <div className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-green-400 font-semibold text-xs xs:text-sm truncate max-w-[120px] xs:max-w-none">{title}</span>
-          </div>
-          
-          <div className="flex items-center space-x-1 xs:space-x-1.5 sm:space-x-2 flex-shrink-0">
-            {!isMobile && (
-              <button
-                onClick={handleMinimize}
-                className="p-1 xs:p-1.5 hover:bg-green-500/20 active:bg-green-500/20 rounded transition-colors touch-manipulation"
-                title="Minimize"
-                aria-label="Minimize"
-              >
-                <FaMinus className="w-2.5 h-2.5 xs:w-3 xs:h-3 text-white" />
-              </button>
-            )}
-            {!isMobile && (
-              <button
-                onClick={handleMaximize}
-                className="p-1 xs:p-1.5 hover:bg-green-500/20 active:bg-green-500/20 rounded transition-colors touch-manipulation"
-                title={maximized ? "Restore" : "Maximize"}
-                aria-label={maximized ? "Restore" : "Maximize"}
-              >
-                {maximized ? (
-                  <FaWindowMaximize className="w-2.5 h-2.5 xs:w-3 xs:h-3 text-white" />
-                ) : (
-                  <FaSquare className="w-2.5 h-2.5 xs:w-3 xs:h-3 text-white" />
+          <div className="flex items-center space-x-3">
+             {/* MacOS Style Buttons - Always Visible Icons */}
+             <div className="flex space-x-2">
+                <button
+                  onClick={handleClose}
+                  className="w-5 h-5 rounded-full bg-red-500 hover:bg-red-600 transition-all flex items-center justify-center group active:scale-90"
+                  title="Close"
+                >
+                  <FaTimes className="w-2.5 h-2.5 text-red-900 opacity-70 group-hover:opacity-100" />
+                </button>
+                <button
+                  onClick={handleMinimize}
+                  className="w-5 h-5 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-all flex items-center justify-center group active:scale-90"
+                  title="Minimize"
+                >
+                   <FaMinus className="w-2.5 h-2.5 text-yellow-900 opacity-70 group-hover:opacity-100" />
+                </button>
+                {!isMobile && (
+                  <button
+                    onClick={handleMaximize}
+                    className="w-5 h-5 rounded-full bg-green-500 hover:bg-green-600 transition-all flex items-center justify-center group active:scale-90"
+                    title={maximized ? "Restore" : "Maximize"}
+                  >
+                     {maximized ? (
+                      <FaWindowMaximize className="w-2.5 h-2.5 text-green-900 opacity-70 group-hover:opacity-100" />
+                     ) : (
+                      <FaSquare className="w-2.5 h-2.5 text-green-900 opacity-70 group-hover:opacity-100" />
+                     )}
+                  </button>
                 )}
-              </button>
-            )}
-            <button
-              onClick={handleClose}
-              className="p-1 xs:p-1.5 hover:bg-red-500/20 active:bg-red-500/20 rounded transition-colors touch-manipulation"
-              title="Close"
-              aria-label="Close"
-            >
-              <FaTimes className="w-2.5 h-2.5 xs:w-3 xs:h-3 text-white" />
-            </button>
+             </div>
+            <span className="text-gray-300 font-medium text-sm select-none pl-2">{title}</span>
           </div>
         </div>
 
         {/* Window Content */}
-        <div className="flex-1 overflow-auto overscroll-contain scrollbar-hide pb-20 sm:pb-24" style={{ maxHeight: shouldMaximize ? `calc(100vh - ${isMobile ? 40 : 48}px - 40px)` : 'none' }}>
-          <div className="pb-4">
+        <div className="flex-1 overflow-auto overscroll-contain scrollbar-hide pb-20 sm:pb-24 relative" style={{ maxHeight: shouldMaximize ? `calc(100vh - ${isMobile ? 40 : 48}px - 40px)` : 'none' }}>
+           {/* Inner Gradient Shine */}
+           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50 pointer-events-none" />
+          <div className="pb-4 h-full">
             {children}
           </div>
         </div>
@@ -280,7 +276,7 @@ const Window = ({ id, title, children, position, size, maximized, zIndex }) => {
             className="resize-handle absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize"
             onMouseDown={handleResizeStart}
             style={{
-              background: 'linear-gradient(135deg, transparent 0%, transparent 40%, rgba(34, 197, 94, 0.5) 40%, rgba(34, 197, 94, 0.5) 60%, transparent 60%)',
+              background: 'linear-gradient(135deg, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%, transparent 60%)',
             }}
           />
         )}

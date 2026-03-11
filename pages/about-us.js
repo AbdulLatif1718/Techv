@@ -55,10 +55,10 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About TechVerge Africa – Africa’s Boldest Venture Builder</title>
+        <title>About TechVerge Africa - Africa&apos;s Boldest Venture Builder</title>
         <meta
           name="description"
-          content="TechVerge Africa is a venture-building holding company co-creating the future of Africa through bold startups, deep tech, and local insight."
+          content="TechVerge Africa is an African technology infrastructure company building the foundational systems required for Africa's digital and AI-driven economy."
         />
       </Head>
 
@@ -81,7 +81,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Powering Africa&apos;s Future with Bold Tech Ventures
+            Building the Foundational Systems for Africa&apos;s Digital Economy
           </motion.h1>
           <motion.p
             className="text-lg sm:text-xl text-gray-200"
@@ -89,8 +89,8 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            TechVerge Africa is a holding company launching and scaling future-facing
-            startups tackling Africa&apos;s most urgent challenges, from food systems and finance to frontier technology.
+            TechVerge Africa is an African technology infrastructure company building the 
+            foundational systems required for Africa&apos;s digital and AI-driven economy.
           </motion.p>
         </div>
       </section>
@@ -166,11 +166,14 @@ const About = () => {
           className="space-y-6"
         >
           <p className="text-xl text-gray-700 leading-relaxed font-light">
-            Africa&apos;s challenges are immense, and so is its potential. At TechVerge Africa,
-            we exist to build the companies that can solve real problems at scale.
+            The company develops platforms, tools, talent pipelines, and applied technology 
+            infrastructure that enable startups, enterprises, governments, and communities 
+            to build, deploy, and scale digital solutions across the continent.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
-            We&apos;re not just investors, we co-create, co-build, and go the distance.
+            Rather than creating isolated products, TechVerge Africa focuses on building enabling 
+            infrastructure — the underlying layers that make innovation faster, more accessible, 
+            and locally relevant.
           </p>
         </motion.div>
 
@@ -182,11 +185,11 @@ const About = () => {
           className="space-y-4"
         >
           {[
-            "We incubate bold, technology-first ventures.",
-            "We partner with founders from zero to traction and scale.",
-            "We operate at the intersection of business, tech, and impact.",
-            "We tackle problems across AgriTech, FinTech, HealthTech, AI, and more.",
-            "We're creating Africa-led innovations for global relevance."
+            "AI-native education",
+            "Applied technology platforms",
+            "Data infrastructure",
+            "Startup ecosystem development",
+            "Digital innovation systems designed for African markets and realities"
           ].map((point, index) => (
             <motion.div
               key={index}
@@ -345,8 +348,8 @@ const About = () => {
             Ready to Build the Future of Africa?
           </h2>
           <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto">
-            Whether you’re a founder, operator, investor, or innovator — join us in shaping
-            tomorrow’s Africa through bold, tech-driven companies.
+            Whether you&apos;re a founder, operator, investor, or innovator — join us in shaping
+            tomorrow&apos;s Africa through bold, tech-driven companies.
           </p>
           <button
             onClick={() => (window.location.href = "/contact")}

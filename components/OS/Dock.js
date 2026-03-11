@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 import { openWindow } from '../../features/windows/windowSlice';
-import { FaHome, FaInfoCircle, FaRocket, FaUsers, FaEnvelope, FaTerminal, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaBuilding, FaRobot, FaGlobe, FaBookOpen, FaHandshake, FaEnvelope, FaTerminal, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 const Dock = () => {
   const dispatch = useDispatch();
@@ -10,9 +10,10 @@ const Dock = () => {
 
   const dockItems = [
     { id: 'home', icon: FaHome, label: 'Home', type: 'home' },
-    { id: 'about', icon: FaInfoCircle, label: 'About', type: 'about' },
-    { id: 'ventures', icon: FaRocket, label: 'Ventures', type: 'ventures' },
-    { id: 'team', icon: FaUsers, label: 'Team', type: 'team' },
+    { id: 'infrastructure', icon: FaBuilding, label: 'Infrastructure', type: 'infrastructure' },
+    { id: 'platforms', icon: FaRobot, label: 'Platforms', type: 'platforms' },
+    { id: 'ecosystem', icon: FaGlobe, label: 'Ecosystem', type: 'ecosystem' },
+    { id: 'insights', icon: FaBookOpen, label: 'Insights', type: 'insights' },
     { id: 'contact', icon: FaEnvelope, label: 'Contact', type: 'contact' },
     { id: 'terminal', icon: FaTerminal, label: 'Terminal', type: 'terminal' },
   ];
@@ -101,12 +102,12 @@ const Dock = () => {
 
   return (
     <motion.div
-      className="fixed bottom-2 xs:bottom-3 sm:bottom-4 left-0 right-0 sm:left-1/2 sm:right-auto sm:transform sm:-translate-x-1/2 z-[999]   sm:max-w-4xl px-2 xs:px-4"
+      className="fixed bottom-4 xs:bottom-6 left-0 right-0 sm:left-1/2 sm:right-auto sm:transform sm:-translate-x-1/2 z-[999] sm:max-w-4xl px-4 flex justify-center"
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.5 }}
     >
-      <div className="flex items-center justify-start sm:justify-center space-x-1 xs:space-x-2 bg-black/80 backdrop-blur-md border border-green-500/30 rounded-full px-2 xs:px-3 sm:px-4 py-1.5 xs:py-2 shadow-2xl overflow-x-auto scrollbar-hide w-full sm:w-auto sm:min-w-0">
+      <div className="flex items-center justify-center space-x-2 bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-3 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-x-auto scrollbar-hide w-full max-w-fit">
         {/* App Icons */}
         {dockItems.map((item) => {
           const Icon = item.icon;
@@ -115,30 +116,38 @@ const Dock = () => {
           return (
             <motion.button
               key={item.id}
-              className={`relative p-2 xs:p-2.5 sm:p-3 rounded-lg transition-all duration-300 touch-manipulation flex-shrink-0 ${
+              className={`relative p-3 rounded-xl transition-all duration-200 group ${
                 isOpen
-                  ? 'bg-green-500/30 text-green-400'
-                  : 'text-white active:bg-green-500/20 active:text-green-400'
+                  ? 'bg-white/10 text-white'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
               onClick={() => handleClick(item.type)}
-              whileHover={{ scale: 1.2, y: -10 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ 
+                scale: 1.2, 
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
+                y: -5
+              }}
+              whileTap={{ scale: 0.95 }}
               title={item.label}
               aria-label={item.label}
             >
-              <Icon className="w-4 h-4 xs:w-4.5 xs:h-4.5 sm:w-5 sm:h-5" />
+              <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
               {isOpen && (
                 <motion.div
-                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-green-400 rounded-full"
+                  className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-green-400 rounded-full shadow-[0_0_8px_rgba(74,222,128,0.8)]"
                   layoutId="activeIndicator"
                 />
               )}
+              {/* Tooltip on Hover */}
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                {item.label}
+              </span>
             </motion.button>
           );
         })}
 
         {/* Divider */}
-        <div className="h-6 xs:h-8 w-px bg-green-500/30 mx-1 xs:mx-2 flex-shrink-0" />
+        <div className="h-8 w-px bg-white/10 mx-2 flex-shrink-0" />
 
         {/* Social Media Icons */}
         {socialItems.map((item) => {
@@ -150,13 +159,13 @@ const Dock = () => {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`relative p-2 xs:p-2.5 sm:p-3 rounded-lg transition-all duration-300 touch-manipulation flex-shrink-0 text-white active:bg-green-500/20 ${item.color}`}
-              whileHover={{ scale: 1.2, y: -10 }}
-              whileTap={{ scale: 0.9 }}
+              className={`relative p-3 rounded-xl transition-all duration-200 text-gray-400 hover:text-white hover:bg-white/5 ${item.color}`}
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.95 }}
               title={item.label}
               aria-label={item.label}
             >
-              <Icon className="w-4 h-4 xs:w-4.5 xs:h-4.5 sm:w-5 sm:h-5" />
+              <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
             </motion.a>
           );
         })}

@@ -49,23 +49,13 @@ const DesktopIcon = ({ id, label, type, icon, position }) => {
       style={{ position: 'absolute', left: position.x, top: position.y }}
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
-      whileHover={{ scale: 1.1, y: -5 }}
-      whileTap={{ scale: 0.95 }}
-      animate={{
-        y: [0, -5, 0],
-      }}
-      transition={{
-        y: {
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        },
-      }}
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.98 }}
     >
       <motion.div
-        className="w-20 h-20 xs:w-24 xs:h-24 sm:w-20 sm:h-20 md:w-20 md:h-20 flex items-center justify-center text-3xl xs:text-4xl sm:text-4xl md:text-5xl rounded-lg bg-black/30 backdrop-blur-sm border-2 border-transparent group-hover:border-green-400 active:border-green-400 transition-all duration-300"
+        className="w-20 h-20 xs:w-24 xs:h-24 sm:w-20 sm:h-20 md:w-20 md:h-20 flex items-center justify-center text-3xl xs:text-4xl sm:text-4xl md:text-5xl rounded-lg bg-black/30 backdrop-blur-sm border-2 border-transparent group-hover:border-green-400/50 active:border-green-400/50 transition-all duration-300"
         whileHover={{
-          boxShadow: '0 0 30px rgba(34, 197, 94, 0.6), inset 0 0 20px rgba(34, 197, 94, 0.2)',
+          boxShadow: '0 0 15px rgba(34, 197, 94, 0.4), inset 0 0 10px rgba(34, 197, 94, 0.1)',
         }}
       >
         {icon}

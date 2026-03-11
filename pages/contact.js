@@ -13,7 +13,7 @@ function ContactPage() {
         <title>Connect with TechVerge Africa</title>
         <meta
           name="description"
-          content="Partner, collaborate, or innovate with TechVerge Africa—Africa’s venture-building holding company shaping bold tech startups."
+          content="Partner, collaborate, or innovate with TechVerge Africa—Africa's venture-building holding company shaping bold tech startups."
         />
       </Head>
 
@@ -31,7 +31,7 @@ function ContactPage() {
         </div>
         <div className="relative z-10 p-8 rounded-xl max-w-4xl text-center">
           <h1 className="text-4xl md:text-2xl font-extrabold tracking-tight mb-4">
-            {/* Let’s Build the Future of Africa—Together */}
+            {/* Let's Build the Future of Africa—Together */}
           </h1>
           <p className="text-lg sm:text-xl text-gray-200">
             Whether you&apos;re a founder, investor, or partner, we&apos;re excited to connect
@@ -45,7 +45,7 @@ function ContactPage() {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
           <p className="text-gray-700 max-w-2xl mx-auto mb-8">
-            Interested in building impactful startups with us? Reach out using the form below, we’re ready to collaborate.
+            Interested in building impactful startups with us? Reach out using the form below, we&apos;re ready to collaborate.
           </p>
         </div>
         <ContactComponent />
@@ -97,12 +97,12 @@ function ContactPage() {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">What Partners Say</h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            Hear from founders and partners who’ve built alongside us.
+            Hear from founders and partners who've built alongside us.
           </p>
           <div className="mt-8 space-y-8">
             {[
               {
-                text: "Partnering with TechVerge provided guidance and support that helped us scale rapidly. They’re not just investors—they build alongside us.",
+                text: "Partnering with TechVerge provided guidance and support that helped us scale rapidly. They're not just investors—they build alongside us.",
                 name: "Founder, AgriNova",
                 role: "AgriTech Startup",
               },

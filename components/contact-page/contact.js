@@ -33,7 +33,7 @@ const Contact = () => {
         body: JSON.stringify({ type: activeForm, ...formData }),
       });
       if (res.ok) {
-        alert('Message sent! We’ll get back in 1 business day.');
+        alert('Message sent! We\'ll get back in 1 business day.');
         setProgress(100);
         setFormData({
           name: '',

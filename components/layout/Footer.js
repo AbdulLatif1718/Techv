@@ -12,7 +12,7 @@ const Footer = () => {
 				<div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
 					<div className="text-center md:text-left">
 						<h2 className="text-2xl font-bold">TechVerge Africa</h2>
-						<p className="mt-2 text-gray-400">Where African Knowledge and Innovation Sparks Global Impact</p>
+						<p className="mt-2 text-gray-400">Building the foundational systems for Africa&apos;s digital and AI-driven economy</p>
 					</div>
 
 					<ul className="flex space-x-8 text-gray-400 mb-6 md:mb-0">
@@ -57,7 +57,7 @@ const Footer = () => {
 						<FaTwitter className="text-xl" />
 					</a>
 					<a
-						href="https://www.linkedin.com/company/techvergeafrica/"
+						href="https://www.linkedin.com/company/techvergeafrica/ "
 						aria-label="LinkedIn"
 						className="hover:text-green-400"
 						target="_blank"

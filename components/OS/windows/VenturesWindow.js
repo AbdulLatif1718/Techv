@@ -1,57 +1,8 @@
 import { motion } from 'framer-motion';
-import { FaRocket, FaArrowRight, FaSeedling, FaCoins, FaRobot, FaCode } from 'react-icons/fa';
+import { FaRocket, FaArrowRight, FaSeedling, FaCoins, FaRobot, FaCode, FaFlask, FaGraduationCap } from 'react-icons/fa';
 
 const VenturesWindow = () => {
-  const ventures = [
-    {
-      name: 'AgriNova',
-      category: 'AgriTech',
-      description: 'Revolutionizing sustainable farming across Africa with AI-powered crop management and smart irrigation systems.',
-      icon: FaSeedling,
-      status: 'Active',
-      color: 'from-green-400 to-emerald-500',
-    },
-    {
-      name: 'PayBloc',
-      category: 'FinTech',
-      description: 'Next-generation payment solutions making financial services accessible to millions across the continent.',
-      icon: FaCoins,
-      status: 'Active',
-      color: 'from-yellow-400 to-orange-500',
-    },
-    {
-      name: 'RoboTech Africa',
-      category: 'Robotics',
-      description: 'Building autonomous systems and robotics solutions for agriculture, manufacturing, and logistics.',
-      icon: FaRobot,
-      status: 'Active',
-      color: 'from-blue-400 to-cyan-500',
-    },
-    {
-      name: 'EduTech Labs',
-      category: 'EdTech',
-      description: 'Transforming education delivery through AI-powered learning platforms and virtual classrooms.',
-      icon: FaCode,
-      status: 'Active',
-      color: 'from-purple-400 to-pink-500',
-    },
-    {
-      name: 'Web3 Ventures',
-      category: 'Web3',
-      description: 'Pioneering blockchain solutions for supply chain transparency, digital identity, and decentralized finance.',
-      icon: FaRocket,
-      status: 'Active',
-      color: 'from-indigo-400 to-purple-500',
-    },
-    {
-      name: 'HealthTech Solutions',
-      category: 'HealthTech',
-      description: 'Leveraging technology to improve healthcare access and delivery in underserved communities.',
-      icon: FaRocket,
-      status: 'Coming Soon',
-      color: 'from-red-400 to-pink-500',
-    },
-  ];
+
 
   return (
     <div className="p-4 xs:p-5 sm:p-6 md:p-8 text-white min-h-full bg-gradient-to-br from-green-950/50 to-black">
@@ -64,12 +15,53 @@ const VenturesWindow = () => {
           Our Ventures
         </h1>
         <p className="text-sm xs:text-base sm:text-lg text-gray-300 mb-6 xs:mb-7 sm:mb-8">
-          We support bold startups solving real problems in Africa, from AgriTech and FinTech to AI, Web3, and Robotics.
+          We build and scale practical technology ventures that solve real problems across Africa, with a strong focus on simplicity, accessibility, and impact.
         </p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {ventures.map((venture, index) => {
+        {[
+          {
+            name: 'ZiroKash',
+            category: 'FinTech',
+            description: 'A unified payments platform that makes collecting payments as simple as creating a form—built for African businesses, organizations, and communities.',
+            icon: FaCoins,
+            status: 'Active',
+            color: 'from-yellow-400 to-orange-500',
+          },
+          {
+            name: 'TerraBots',
+            category: 'AgriTech & Robotics',
+            description: 'Developing autonomous and smart agricultural robotics to make farming more efficient, affordable, and scalable for African farmers.',
+            icon: FaRobot,
+            status: 'Active',
+            color: 'from-green-400 to-emerald-500',
+          },
+          {
+            name: 'ZiroPay',
+            category: 'FinTech Infrastructure',
+            description: 'Payment tools and APIs designed to power collections, disbursements, and payment experiences for platforms, institutions, and developers.',
+            icon: FaCode,
+            status: 'In Development',
+            color: 'from-blue-400 to-cyan-500',
+          },
+          {
+            name: 'TechVerge Labs',
+            category: 'AI, Automation & Emerging Tech',
+            description: 'Our research and experimentation arm, exploring AI, automation, and hardware solutions tailored to African use cases.',
+            icon: FaFlask,
+            status: 'In Development',
+            color: 'from-purple-400 to-pink-500',
+          },
+          {
+            name: 'EduTech Programs',
+            category: 'EdTech',
+            description: 'Digital learning initiatives focused on practical tech education, innovation, and skills development for African youth.',
+            icon: FaGraduationCap,
+            status: 'Future Initiative',
+            color: 'from-indigo-400 to-purple-500',
+          },
+        ].map((venture, index) => {
           const Icon = venture.icon;
           return (
             <motion.div

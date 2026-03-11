@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaGithub, FaBuilding, FaHandshake, FaCode } from 'react-icons/fa';
 
 const ContactWindow = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    category: 'General Enquiries',
     message: '',
   });
 
@@ -14,7 +14,7 @@ const ContactWindow = () => {
     e.preventDefault();
     // Handle form submission
     alert('Thank you for your message! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', category: 'General Enquiries', message: '' });
   };
 
   const handleChange = (e) => {
@@ -25,7 +25,7 @@ const ContactWindow = () => {
   };
 
   return (
-    <div className="p-4 xs:p-5 sm:p-6 md:p-8 text-white min-h-full bg-gradient-to-br from-green-950/50 to-black">
+    <div className="p-4 xs:p-5 sm:p-6 md:p-8 text-white min-h-full bg-gradient-to-br from-black via-green-950/20 to-black overflow-y-auto custom-scrollbar">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const ContactWindow = () => {
           Contact Us
         </h1>
         <p className="text-sm xs:text-base sm:text-lg text-gray-300 mb-6 xs:mb-7 sm:mb-8">
-          Get in touch with us. We&apos;d love to hear from you!
+          Partner with us to build Africa&apos;s digital infrastructure layer.
         </p>
       </motion.div>
 
@@ -57,6 +57,7 @@ const ContactWindow = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 bg-black/50 border border-green-500/30 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
+                placeholder="Your Name"
               />
             </div>
             <div>
@@ -68,18 +69,23 @@ const ContactWindow = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 bg-black/50 border border-green-500/30 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
+                placeholder="your.email@company.com"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">Subject</label>
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
+              <label className="block text-sm font-semibold text-gray-300 mb-2">I am interested in...</label>
+              <select
+                name="category"
+                value={formData.category}
                 onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-black/50 border border-green-500/30 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
-              />
+                className="w-full px-4 py-2 bg-black/50 border border-green-500/30 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors appearance-none"
+              >
+                <option>General Enquiries</option>
+                <option>Strategic Partnerships</option>
+                <option>Enterprise Solutions</option>
+                <option>Developer Support & Ecosystem</option>
+                <option>Media & Speaking</option>
+              </select>
             </div>
             <div>
               <label className="block text-sm font-semibold text-gray-300 mb-2">Message</label>
@@ -90,11 +96,12 @@ const ContactWindow = () => {
                 required
                 rows={6}
                 className="w-full px-4 py-2 bg-black/50 border border-green-500/30 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors resize-none"
+                placeholder="How can we build together?"
               />
             </div>
             <motion.button
               type="submit"
-              className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all"
+              className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all shadow-lg shadow-green-900/40"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -109,86 +116,86 @@ const ContactWindow = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h2 className="text-2xl font-bold text-green-400 mb-6">Get in Touch</h2>
-          <div className="space-y-6">
-            <div className="bg-black/30 backdrop-blur-sm border border-green-500/20 rounded-lg p-6">
-              <div className="flex items-start space-x-4">
-                <FaEnvelope className="text-green-400 text-2xl mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
-                  <a href="mailto:info@techverge.africa" className="text-gray-300 hover:text-green-400 transition-colors">
-                    info@techverge.africa
-                  </a>
-                </div>
-              </div>
+          <h2 className="text-2xl font-bold text-green-400 mb-6">Direct Channels</h2>
+          <div className="space-y-4">
+            
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-green-500/30 transition-colors cursor-pointer group">
+               <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center mr-4 group-hover:bg-green-500/20 transition-colors">
+                     <FaHandshake className="text-green-400" />
+                  </div>
+                  <div>
+                     <h3 className="font-bold text-white">Partnerships</h3>
+                     <p className="text-sm text-gray-400">partners@techverge.africa</p>
+                  </div>
+               </div>
             </div>
 
-            <div className="bg-black/30 backdrop-blur-sm border border-green-500/20 rounded-lg p-6">
-              <div className="flex items-start space-x-4">
-                <FaPhone className="text-green-400 text-2xl mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-1">Phone</h3>
-                  <a href="tel:+234123456789" className="text-gray-300 hover:text-green-400 transition-colors">
-                    +234 (0) 123 456 789
-                  </a>
-                </div>
-              </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-green-500/30 transition-colors cursor-pointer group">
+               <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center mr-4 group-hover:bg-blue-500/20 transition-colors">
+                     <FaBuilding className="text-blue-400" />
+                  </div>
+                  <div>
+                     <h3 className="font-bold text-white">Enterprise Solutions</h3>
+                     <p className="text-sm text-gray-400">enterprise@techverge.africa</p>
+                  </div>
+               </div>
             </div>
 
-            <div className="bg-black/30 backdrop-blur-sm border border-green-500/20 rounded-lg p-6">
-              <div className="flex items-start space-x-4">
-                <FaMapMarkerAlt className="text-green-400 text-2xl mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-1">Location</h3>
-                  <p className="text-gray-300">
-                    Lagos, Nigeria<br />
-                    Accra, Ghana<br />
-                    Nairobi, Kenya
-                  </p>
-                </div>
-              </div>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-green-500/30 transition-colors cursor-pointer group">
+               <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center mr-4 group-hover:bg-purple-500/20 transition-colors">
+                     <FaCode className="text-purple-400" />
+                  </div>
+                  <div>
+                     <h3 className="font-bold text-white">Developer Support</h3>
+                     <p className="text-sm text-gray-400">devs@techverge.africa</p>
+                  </div>
+               </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10">
+               <h3 className="font-bold text-lg mb-4">Locations</h3>
+               <div className="flex flex-col sm:flex-row gap-6 text-gray-300">
+                  <div className="flex items-start">
+                     <FaMapMarkerAlt className="mt-1 mr-2 text-green-500" />
+                     <div>
+                        <span className="block font-bold text-white">Lagos</span>
+                        <span className="text-xs">Headquarters</span>
+                     </div>
+                  </div>
+                  <div className="flex items-start">
+                     <FaMapMarkerAlt className="mt-1 mr-2 text-gray-500" />
+                     <div>
+                        <span className="block font-bold text-white">Nairobi</span>
+                        <span className="text-xs">Hub</span>
+                     </div>
+                  </div>
+                   <div className="flex items-start">
+                     <FaMapMarkerAlt className="mt-1 mr-2 text-gray-500" />
+                     <div>
+                        <span className="block font-bold text-white">Accra</span>
+                        <span className="text-xs">Hub</span>
+                     </div>
+                  </div>
+               </div>
             </div>
 
             {/* Social Links */}
-            <div className="bg-black/30 backdrop-blur-sm border border-green-500/20 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
+            <div className="mt-8">
+              <h3 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Connect</h3>
               <div className="flex space-x-4">
-                <motion.a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaLinkedin className="w-6 h-6" />
+                <motion.a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/20 transition-colors" whileHover={{ scale: 1.1 }}>
+                  <FaLinkedin className="w-5 h-5 text-white" />
                 </motion.a>
-                <motion.a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaTwitter className="w-6 h-6" />
+                <motion.a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/20 transition-colors" whileHover={{ scale: 1.1 }}>
+                  <FaTwitter className="w-5 h-5 text-white" />
                 </motion.a>
-                <motion.a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaGithub className="w-6 h-6" />
+                <motion.a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/20 transition-colors" whileHover={{ scale: 1.1 }}>
+                  <FaGithub className="w-5 h-5 text-white" />
                 </motion.a>
               </div>
-            </div>
-
-            {/* Press Inquiries */}
-            <div className="bg-gradient-to-br from-green-900/50 to-black/50 border border-green-500/30 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-white mb-2">Press Inquiries</h3>
-              <p className="text-gray-300 text-sm mb-4">
-                For media and press inquiries, please contact our communications team.
-              </p>
-              <a href="mailto:press@techverge.africa" className="text-green-400 hover:text-green-300 text-sm font-semibold">
-                press@techverge.africa →
-              </a>
             </div>
           </div>
         </motion.div>

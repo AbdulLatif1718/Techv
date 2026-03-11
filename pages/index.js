@@ -15,22 +15,21 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="TechVerge Africa is a holding company launching and scaling future-facing
-            startups tackling Africa's most urgent challenges, from food systems and finance to frontier technology."
+          content="TechVerge Africa is an African technology infrastructure company building the foundational systems required for Africa's digital and AI-driven economy."
         />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://techverge.africa/" />
         <meta property="og:title" content="TechVerge Africa | Leading Digital Innovation Ecosystem" />
-        <meta property="og:description" content="Developing Africa's tech future through robotics, smart agriculture solutions, edutech, Fintech,healthtech innovations and smart infrastructures. Join our innovation community." />
+        <meta property="og:description" content="TechVerge Africa focuses on building enabling infrastructure — the underlying layers that make innovation faster, more accessible, and locally relevant." />
         <meta property="og:image" content="https://cdn.techverge.africa/og-image.jpg" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://techverge.africa/" />
         <meta name="twitter:title" content="TechVerge Africa | Empowering Digital Creators" />
-        <meta name="twitter:description" content="Africa's hub for emerging tech development, AI labs, blockchain solutions, and youth innovation programs." />
+        <meta name="twitter:description" content="Building the foundational systems required for Africa's digital and AI-driven economy." />
         <meta name="twitter:image" content="https://cdn.techverge.africa/twitter-card.jpg" />
 
         {/* Preconnect and Preload */}

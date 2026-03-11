@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   windows: {},
-  zIndex: 1000,
+  zIndex: 1001,
   activeWindow: null,
   bootComplete: false,
 };

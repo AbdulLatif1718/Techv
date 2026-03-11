@@ -10,39 +10,38 @@ const BootScreen = () => {
   const dispatch = useDispatch();
 
   const bootLogs = [
-    '[OK] Initializing TechVerge Africa OS...',
-    '[OK] Loading kernel modules...',
-    '[OK] Mounting filesystems...',
-    '[OK] Starting network services...',
-    '[OK] Loading desktop environment...',
-    '[OK] Initializing window manager...',
-    '[OK] System ready.',
+    '[SYSTEM] Initializing TechVerge Core...',
+    '[KERNEL] Loading neural modules...',
+    '[NET] Establishing secure uplink...',
+    '[DATA] Syncing infrastructure nodes...',
+    '[UI] Mounting Interface...',
+    '[READY] System Online.',
   ];
 
   useEffect(() => {
     let isMounted = true;
 
     const bootSequence = async () => {
-      // Stage 0: Logo rotation (2-3 seconds)
-      await new Promise(resolve => setTimeout(resolve, 2500));
+      // Stage 0: Logo rotation (faster)
+      await new Promise(resolve => setTimeout(resolve, 2000));
       if (!isMounted) return;
       setBootStage(1);
 
       // Stage 1: Boot logs with progress
       for (let i = 0; i < bootLogs.length; i++) {
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, 150));
         if (!isMounted) return;
         const progressValue = ((i + 1) / bootLogs.length) * 100;
         setProgress(progressValue);
       }
 
       // Stage 2: Fade to desktop
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise(resolve => setTimeout(resolve, 400));
       if (!isMounted) return;
       setBootStage(2);
       
       // Complete boot
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise(resolve => setTimeout(resolve, 500));
       if (!isMounted) return;
       dispatch(setBootComplete(true));
     };
@@ -58,32 +57,35 @@ const BootScreen = () => {
     <AnimatePresence>
       {bootStage < 2 && (
         <motion.div
-          className="fixed inset-0 z-[9999] bg-gradient-to-br from-black via-green-950 to-black flex flex-col items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center overflow-hidden"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* CRT Scanline Overlay */}
+          <div className="absolute inset-0 pointer-events-none z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] opacity-20"></div>
+          
           {/* Animated 3D Rotating Logo */}
           <motion.div
-            className="relative mb-6 sm:mb-8 md:mb-12"
+            className="relative mb-8 sm:mb-12"
             animate={{ 
               rotateY: [0, 360],
-              scale: [1, 1.1, 1],
+              scale: [1, 1.05, 1],
             }}
             transition={{ 
-              rotateY: { duration: 3, repeat: Infinity, ease: "linear" },
+              rotateY: { duration: 4, repeat: Infinity, ease: "linear" },
               scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
             }}
             style={{ perspective: 1000 }}
           >
-            <div className="relative w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 md:w-64 md:h-64">
+            <div className="relative w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
               <motion.div
                 className="relative w-full h-full"
                 animate={{
                   filter: [
-                    'drop-shadow(0 0 20px rgba(34, 197, 94, 0.6))',
-                    'drop-shadow(0 0 40px rgba(34, 197, 94, 0.8))',
-                    'drop-shadow(0 0 20px rgba(34, 197, 94, 0.6))',
+                    'drop-shadow(0 0 15px rgba(34, 197, 94, 0.4))',
+                    'drop-shadow(0 0 30px rgba(34, 197, 94, 0.6))',
+                    'drop-shadow(0 0 15px rgba(34, 197, 94, 0.4))',
                   ],
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -95,7 +97,7 @@ const BootScreen = () => {
                   className="object-contain"
                   priority
                   style={{
-                    filter: 'drop-shadow(0 0 30px rgba(34, 197, 94, 0.6))',
+                    filter: 'drop-shadow(0 0 20px rgba(34, 197, 94, 0.5))',
                   }}
                 />
               </motion.div>
@@ -104,31 +106,31 @@ const BootScreen = () => {
 
           {/* Loading Text */}
           <motion.h2
-            className="text-lg xs:text-xl sm:text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-lime-400 via-green-400 to-emerald-400 mb-4 sm:mb-6 md:mb-8 px-4 text-center"
-            animate={{ opacity: [0.5, 1, 0.5] }}
+            className="text-xl sm:text-3xl font-bold font-mono text-green-500 mb-8 tracking-wider"
+            animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            Loading Innovation OS...
+            INITIALIZING SYSTEM...
           </motion.h2>
 
           {/* Boot Logs */}
           {bootStage >= 1 && (
             <motion.div
-              className="w-full max-w-2xl px-4 xs:px-6 sm:px-8 mb-4 sm:mb-6 md:mb-8"
+              className="w-full max-w-xl px-6 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 xs:p-4 sm:p-6 font-mono text-xs xs:text-sm sm:text-sm md:text-base text-green-400 space-y-1 sm:space-y-2 max-h-32 xs:max-h-40 sm:max-h-48 overflow-y-auto">
+              <div className="font-mono text-sm sm:text-base text-green-400 space-y-1 h-40 overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
                 {bootLogs.slice(0, Math.floor((progress / 100) * bootLogs.length) + 1).map((log, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="break-words"
+                    className="flex items-center gap-2"
                   >
-                    {log}
+                   <span className="text-green-600">➜</span> {log}
                   </motion.div>
                 ))}
               </div>
@@ -137,53 +139,24 @@ const BootScreen = () => {
 
           {/* Progress Bar */}
           <motion.div
-            className="w-full max-w-md px-4 xs:px-6 sm:px-8"
+            className="w-full max-w-md px-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.2 }}
           >
-            <div className="h-1.5 xs:h-2 bg-gray-800 rounded-full overflow-hidden">
+            <div className="h-1 bg-gray-900 overflow-hidden relative">
               <motion.div
-                className="h-full bg-gradient-to-r from-lime-400 via-green-500 to-emerald-500"
-                style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.8)' }}
+                className="h-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]"
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.1 }}
               />
             </div>
-            <motion.p
-              className="text-center text-green-400 mt-2 font-mono text-xs xs:text-sm"
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              {Math.round(progress)}%
-            </motion.p>
+            <div className="flex justify-between mt-2 font-mono text-xs text-green-600">
+               <span>SYSTEM_Check: OK</span>
+               <span>{Math.round(progress)}%</span>
+            </div>
           </motion.div>
-
-          {/* Hologram Particles Effect */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-1 h-1 bg-green-400 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  opacity: Math.random() * 0.5 + 0.2,
-                }}
-                animate={{
-                  y: [0, -100, 0],
-                  opacity: [0.2, 0.8, 0.2],
-                  scale: [1, 1.5, 1],
-                }}
-                transition={{
-                  duration: Math.random() * 3 + 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 2,
-                }}
-              />
-            ))}
-          </div>
         </motion.div>
       )}
     </AnimatePresence>
