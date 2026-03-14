@@ -53,7 +53,7 @@ const TopBar = () => {
             src="/images/logotva.svg"
             alt="TechVerge Africa"
             fill
-            className="object-contain"
+            className="object-contain scale-[1.8]"
           />
         </div>
         <span className="text-white/90 font-medium text-sm hidden xs:inline tracking-wide">
