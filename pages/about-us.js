@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaLinkedin, FaTwitter, FaGithub, FaGlobe } from "react-icons/fa";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const team = [
   {
@@ -76,7 +77,7 @@ const About = () => {
         </video>
         <div className="relative z-10 p-8 rounded-xl max-w-4xl text-center">
           <motion.h1
-            className="text-4xl sm:text3xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -333,7 +334,7 @@ const About = () => {
             ))}
           </div>
           <Link
-            href="/team"
+            href="/our-team"
             className="mt-10 inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors duration-300"
           >
             View More
@@ -351,12 +352,12 @@ const About = () => {
             Whether you&apos;re a founder, operator, investor, or innovator — join us in shaping
             tomorrow&apos;s Africa through bold, tech-driven companies.
           </p>
-          <button
-            onClick={() => (window.location.href = "/contact")}
-            className="mt-4 px-8 py-3 bg-white text-green-700 font-semibold rounded-full hover:bg-gray-100 transition"
+          <Link
+            href="/contact"
+            className="mt-4 inline-block px-8 py-3 bg-white text-green-700 font-semibold rounded-full hover:bg-gray-100 transition"
           >
             Let&apos;s Build Together
-          </button>
+          </Link>
         </div>
       </section>
     </>
@@ -364,3 +365,11 @@ const About = () => {
 };
 
 export default About;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

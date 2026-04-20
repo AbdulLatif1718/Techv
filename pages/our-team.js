@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { AiOutlineTeam } from 'react-icons/ai';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const TeamPage = () => {
   return (
@@ -12,18 +13,18 @@ const TeamPage = () => {
           backgroundImage: `url('/images/team-hero.jpg')`, // Replace with your team hero image
         }}
       >
-        <div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg">
-          <h1 className="text-6xl font-extrabold leading-tight">Meet Our Diverse Team</h1>
-          <p className="mt-4 text-lg italic">
+        <div className="bg-black bg-opacity-60 p-6 text-center rounded-lg shadow-lg max-w-[90vw]">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">Meet Our Diverse Team</h1>
+          <p className="mt-4 text-base sm:text-lg italic">
           &quot;Innovating Africa through technology, powered by our passionate team.&quot;
           </p>
         </div>
       </section>
 
       {/* Executive Team Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-12 md:py-16 px-4 bg-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-5xl font-bold flex items-center justify-center gap-3 mb-10 text-teal-600">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold flex items-center justify-center gap-3 mb-10 text-teal-600">
             <AiOutlineTeam className="text-teal-600 text-3xl" /> Executive Team
           </h2>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
@@ -274,3 +275,11 @@ const TeamPage = () => {
 };
 
 export default TeamPage;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

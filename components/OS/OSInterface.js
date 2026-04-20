@@ -5,7 +5,7 @@ import TopBar from './TopBar';
 import Dock from './Dock';
 import WindowManager from './WindowManager';
 
-const OSInterface = () => {
+const OSInterface = ({ onExit }) => {
   const bootComplete = useSelector((state) => state.windows.bootComplete);
 
   return (
@@ -16,7 +16,7 @@ const OSInterface = () => {
           <Desktop>
             <WindowManager />
           </Desktop>
-          <TopBar />
+          <TopBar onExit={onExit} />
           <Dock />
         </>
       )}

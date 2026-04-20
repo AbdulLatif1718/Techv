@@ -6,79 +6,50 @@ const Footer = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className="bg-gray-800 text-white py-12">
-			<div className="max-w-7xl mx-auto px-4">
+		<footer className="bg-black text-white py-20 border-t border-white/5">
+			<div className="max-w-7xl mx-auto px-6">
 				{/* Main Footer Content */}
-				<div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
-					<div className="text-center md:text-left">
-						<h2 className="text-2xl font-bold">TechVerge Africa</h2>
-						<p className="mt-2 text-gray-400">Building the foundational systems for Africa&apos;s digital and AI-driven economy</p>
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+					<div className="col-span-1 md:col-span-2">
+						<h2 className="text-2xl font-bold tracking-tight mb-4">TechVerge <span className="text-emerald-500">Africa</span></h2>
+						<p className="text-gray-400 max-w-sm font-light leading-relaxed">
+							Building the foundational systems required for Africa&apos;s digital sovereignty—from AI-native talent pools to sovereign data systems.
+						</p>
 					</div>
 
-					<ul className="flex space-x-8 text-gray-400 mb-6 md:mb-0">
-						<li><Link href="/" className="hover:text-green-400">Home</Link></li>
-						<li><Link href="/about-us" className="hover:text-green-400">About</Link></li>
-						{/* <li><Link href="/courses" className="hover:text-green-400">Courses</Link></li>
-						<li><Link href="/blog" className="hover:text-green-400">Blog</Link></li>
-						<li><Link href="/jobs" className="hover:text-green-400">Jobs/Internships</Link></li> */}
-						<li><Link href="/contact" className="hover:text-green-400">Contact</Link></li>
-					</ul>
+					<div>
+						<h3 className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-6">Navigation</h3>
+						<ul className="space-y-4 text-sm font-medium text-gray-400">
+							<li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+							<li><Link href="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
+							<li><Link href="/our-team" className="hover:text-white transition-colors">Our Team</Link></li>
+							<li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+						</ul>
+					</div>
 
-					{/* Email Section */}
-					<div className="text-center md:text-left">
-						<p className="text-gray-400 mb-2">Contact us:</p>
-						<a href="mailto:info@techverge.africa" className="hover:text-green-400">
-							info@techverge.africa
-						</a>
+					<div>
+						<h3 className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-6">Connect</h3>
+						<ul className="space-y-4 text-sm font-medium text-gray-400">
+							<li><a href="mailto:info@techverge.africa" className="hover:text-white transition-colors">info@techverge.africa</a></li>
+							<div className="flex space-x-4 pt-2">
+								<a href="https://web.facebook.com/profile.php?id=61564878252192" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors"><FaFacebookF /></a>
+								<a href="https://x.com/TechvergeAfrica" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors"><FaTwitter /></a>
+								<a href="https://www.linkedin.com/company/techvergeafrica/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors"><FaLinkedinIn /></a>
+							</div>
+						</ul>
 					</div>
 				</div>
 
 				{/* Divider */}
-				<div className="border-t border-gray-700 my-6"></div>
-
-				{/* Social Media Links */}
-				<div className="flex justify-center space-x-4">
-					<a
-						href="https://web.facebook.com/profile.php?id=61564878252192"
-						aria-label="Facebook"
-						className="hover:text-green-400"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaFacebookF className="text-xl" />
-					</a>
-					<a
-						href="https://x.com/TechvergeAfrica"
-						aria-label="Twitter"
-						className="hover:text-green-400"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaTwitter className="text-xl" />
-					</a>
-					<a
-						href="https://www.linkedin.com/company/techvergeafrica/ "
-						aria-label="LinkedIn"
-						className="hover:text-green-400"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaLinkedinIn className="text-xl" />
-					</a>
-					<a
-						href="https://www.instagram.com"
-						aria-label="Instagram"
-						className="hover:text-green-400"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaInstagram className="text-xl" />
-					</a>
-				</div>
+				<div className="h-[1px] w-full bg-white/5 mb-8"></div>
 
 				{/* Footer Bottom */}
-				<div className="text-center mt-6 text-gray-400">
+				<div className="flex flex-col md:row justify-between items-center gap-4 text-[10px] font-mono text-gray-500 uppercase tracking-wider">
 					<p>&copy; {currentYear} TechVerge Africa. All rights reserved.</p>
+					<div className="flex gap-6">
+						<span>Privacy Policy</span>
+						<span>Terms of Service</span>
+					</div>
 				</div>
 			</div>
 		</footer>

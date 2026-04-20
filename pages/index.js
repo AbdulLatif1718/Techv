@@ -1,7 +1,7 @@
-/** @format */
 import Head from "next/head";
 import React, { Fragment } from "react";
 import HomePageComponent from "../components/home-page/home-page";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="TechVerge Africa is an African technology infrastructure company building the foundational systems required for Africa's digital and AI-driven economy."
+          content="TechVerge Africa is an African technology infrastructure company building the foundational systems required for Africa&apos;s digital and AI-driven economy."
         />
         
         {/* Open Graph / Facebook */}
@@ -29,7 +29,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://techverge.africa/" />
         <meta name="twitter:title" content="TechVerge Africa | Empowering Digital Creators" />
-        <meta name="twitter:description" content="Building the foundational systems required for Africa's digital and AI-driven economy." />
+        <meta name="twitter:description" content="Building the foundational systems required for Africa&apos;s digital and AI-driven economy." />
         <meta name="twitter:image" content="https://cdn.techverge.africa/twitter-card.jpg" />
 
         {/* Preconnect and Preload */}
@@ -45,4 +45,12 @@ export default function Home() {
       <HomePageComponent />
     </Fragment>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }

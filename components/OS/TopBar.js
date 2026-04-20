@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaBell, FaPowerOff } from 'react-icons/fa';
 import Image from 'next/image';
 
-const TopBar = () => {
+const TopBar = ({ onExit }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [showNotifications, setShowNotifications] = useState(false);
 
@@ -80,6 +80,18 @@ const TopBar = () => {
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
             <span className="text-[10px] text-white/50 uppercase tracking-wider">Online</span>
          </div>
+
+        {/* Exit to Site */}
+        {onExit && (
+          <motion.button
+            className="flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 text-[10px] font-mono hover:bg-emerald-500/20 transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={onExit}
+          >
+            EXIT_OS
+          </motion.button>
+        )}
 
         {/* Notifications */}
         <div className="relative">

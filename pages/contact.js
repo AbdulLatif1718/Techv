@@ -1,10 +1,9 @@
-/** @format */
-
 import { Fragment } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import ContactComponent from "../components/contact-page/contact";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 function ContactPage() {
   return (
@@ -13,7 +12,7 @@ function ContactPage() {
         <title>Connect with TechVerge Africa</title>
         <meta
           name="description"
-          content="Partner, collaborate, or innovate with TechVerge Africa—Africa's venture-building holding company shaping bold tech startups."
+          content="Partner, collaborate, or innovate with TechVerge Africa—Africa&apos;s venture-building holding company shaping bold tech startups."
         />
       </Head>
 
@@ -144,3 +143,11 @@ function ContactPage() {
 }
 
 export default ContactPage;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

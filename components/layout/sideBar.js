@@ -109,10 +109,8 @@ const SideBar = ({ burgerMenuStatus, setBurgerMenuStatus }) => {
             </div>
 
             {/* Footer */}
-            <footer className="absolute bottom-4 w-full px-6 text-center text-sm text-gray-500">
-              <p className="text-center md:text-left mb-6 md:mb-0">
-                &copy; {currentYear} TechVerge Africa. All rights reserved.
-              </p>
+            <footer className="absolute bottom-8 w-full px-6 text-center text-[10px] text-gray-500 font-mono tracking-widest uppercase">
+              <p>&copy; {currentYear} TechVerge Africa</p>
             </footer>
           </div>
         </BackDrop>
