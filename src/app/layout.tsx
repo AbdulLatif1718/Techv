@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
-import { Inter, Outfit } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { CartProvider } from '@/context/CartContext';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
 
 export const metadata: Metadata = {
-  title: 'TechVerge Africa | Building the Future for Everyone',
-  description: 'TechVerge Africa is a bold African technology company building digital infrastructure, AI systems, robotics, and intelligent platforms that empower everyone.',
-  keywords: ['TechVerge Africa', 'AI', 'Robotics', 'Digital Infrastructure', 'Africa Tech', 'Innovation'],
+  title: 'TechVerge Africa | Building AI & Digital Infrastructure',
+  description: 'TechVerge Africa is a world-class technology company building digital infrastructure, AI systems, and intelligent platforms that empower the future of Africa.',
+  keywords: ['TechVerge Africa', 'AI', 'Robotics', 'Digital Infrastructure', 'Africa Tech', 'Innovation', 'Intelligent Systems'],
   authors: [{ name: 'TechVerge Africa' }],
   openGraph: {
-    title: 'TechVerge Africa | Building the Future for Everyone',
-    description: 'Empowering Africa and the world through AI, Robotics, and Digital Infrastructure.',
+    title: 'TechVerge Africa | Building AI & Digital Infrastructure',
+    description: 'Empowering Africa and the world through AI, Digital Infrastructure, and Intelligent Systems.',
     url: 'https://techvergeafrica.com',
     siteName: 'TechVerge Africa',
     images: [
@@ -36,12 +37,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable} font-outfit antialiased bg-tech-dark text-white`}>
-        <div className="relative min-h-screen overflow-x-hidden">
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </div>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-inter antialiased bg-tech-dark text-white`}>
+        <CartProvider>
+          <div className="relative min-h-screen overflow-x-hidden">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </CartProvider>
       </body>
     </html>
   );

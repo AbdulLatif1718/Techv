@@ -15,9 +15,9 @@ const VisionSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-tech-accent font-bold tracking-widest uppercase text-sm mb-6">Our Vision</h3>
-            <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-10 leading-tight">
               Technology Should <br />
-              <span className="text-glow">Reach Everyone.</span>
+              <span className="text-white">Reach Everyone.</span>
             </h2>
             
             <div className="space-y-8">
@@ -28,11 +28,11 @@ const VisionSection = () => {
                 { title: 'Future-focused innovation', desc: 'Not just catching up, but leading the global technological frontier.' }
               ].map((item, index) => (
                 <div key={index} className="flex gap-6 group">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-tech-accent group-hover:bg-tech-accent group-hover:text-tech-dark transition-all duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-tech-accent group-hover:bg-tech-accent/10 group-hover:border-tech-accent/50 transition-all duration-300">
                     <span className="font-bold">{index + 1}</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2 group-hover:text-tech-accent transition-colors">{item.title}</h4>
+                    <h4 className="text-xl font-extrabold mb-2 group-hover:text-tech-accent transition-colors">{item.title}</h4>
                     <p className="text-gray-400 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>

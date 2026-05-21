@@ -12,31 +12,31 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         tech: {
-          dark: "#050505",
+          dark: "#121212",
           deep: "#0a0a0a",
-          accent: "#00f2ff", // Electric Cyan
-          glow: "#0047ff",   // Deep Blue Glow
-          muted: "#1a1a1a",
+          accent: "#14b8c6", // Muted Teal
+          glow: "#2563eb",   // Professional Blue
+          muted: "#2a2a2a",
         },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "futuristic-grid": "linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)",
+        "futuristic-grid": "linear-gradient(to right, #2a2a2a 1px, transparent 1px), linear-gradient(to bottom, #2a2a2a 1px, transparent 1px)",
       },
       animation: {
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "glow-pulse": "glow 2s ease-in-out infinite alternate",
-        "float": "float 6s ease-in-out infinite",
+        "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "glow-soft": "glow 4s ease-in-out infinite alternate",
+        "fade-up": "fadeUp 0.8s ease-out forwards",
       },
       keyframes: {
         glow: {
-          "0%": { boxShadow: "0 0 5px #00f2ff, 0 0 10px #00f2ff" },
-          "100%": { boxShadow: "0 0 20px #00f2ff, 0 0 40px #0047ff" },
+          "0%": { boxShadow: "0 0 5px rgba(20, 184, 198, 0.2)" },
+          "100%": { boxShadow: "0 0 15px rgba(20, 184, 198, 0.4)" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       backdropBlur: {

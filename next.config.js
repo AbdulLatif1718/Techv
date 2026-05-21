@@ -14,8 +14,25 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'api.dicebear.com',
+        port: '',
+        pathname: '/7.x/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.techverge.africa',
+        port: '',
+        pathname: '/**',
+      },
     ],
-    domains: ['cdn.techverge.africa'],
     formats: ['image/webp'],
     minimumCacheTTL: 604800, // 1 week
   },

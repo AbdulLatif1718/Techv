@@ -1,16 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { 
+  Cpu, 
+  Bot, 
+  Globe, 
+  TestTube, 
+  GraduationCap, 
+  BrainCircuit, 
+  Smartphone, 
+  Zap, 
+  ArrowRight 
+} from 'lucide-react';
 
 const services = [
-  { title: 'Artificial Intelligence', icon: '🤖', desc: 'Developing neural networks and LLMs optimized for diverse environments.' },
-  { title: 'Robotics', icon: '🦾', desc: 'Creating autonomous systems for industrial and agricultural transformation.' },
-  { title: 'Digital Infrastructure', icon: '🌐', desc: 'Building the connectivity backbone for the next billion users.' },
-  { title: 'Research Labs', icon: '🧪', desc: 'Pushing the boundaries of theoretical and applied computer science.' },
-  { title: 'Education Tech', icon: '🎓', desc: 'Intelligent platforms making knowledge accessible to everyone.' },
-  { title: 'Intelligent Systems', icon: '🧠', desc: 'Smart algorithms that solve complex real-world challenges.' },
-  { title: 'Smart Platforms', icon: '📱', desc: 'The digital ecosystems of the future, born in Africa.' },
-  { title: 'Edge Computing', icon: '⚡', desc: 'High-performance processing at the source of data generation.' }
+  { title: 'Artificial Intelligence', icon: Cpu, desc: 'Developing neural networks and LLMs optimized for diverse environments.' },
+  { title: 'Robotics', icon: Bot, desc: 'Creating autonomous systems for industrial and agricultural transformation.' },
+  { title: 'Digital Infrastructure', icon: Globe, desc: 'Building the connectivity backbone for the next billion users.' },
+  { title: 'Research Labs', icon: TestTube, desc: 'Pushing the boundaries of theoretical and applied computer science.' },
+  { title: 'Education Tech', icon: GraduationCap, desc: 'Intelligent platforms making knowledge accessible to everyone.' },
+  { title: 'Intelligent Systems', icon: BrainCircuit, desc: 'Smart algorithms that solve complex real-world challenges.' },
+  { title: 'Smart Platforms', icon: Smartphone, desc: 'The digital ecosystems of the future, born in Africa.' },
+  { title: 'Edge Computing', icon: Zap, desc: 'High-performance processing at the source of data generation.' }
 ];
 
 const WhatWeBuild = () => {
@@ -48,8 +59,8 @@ const WhatWeBuild = () => {
               whileHover={{ y: -10 }}
               className="p-8 rounded-3xl glass border border-white/5 hover:border-tech-accent/30 hover:shadow-[0_0_40px_rgba(0,242,255,0.1)] transition-all group duration-500"
             >
-              <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition-all transform group-hover:scale-110 duration-500">
-                {item.icon}
+              <div className="mb-6 grayscale group-hover:grayscale-0 transition-all transform group-hover:scale-110 duration-500">
+                <item.icon size={40} strokeWidth={1.5} className="text-tech-accent" />
               </div>
               <h4 className="text-xl font-bold mb-4 group-hover:text-tech-accent transition-colors">
                 {item.title}
@@ -60,7 +71,7 @@ const WhatWeBuild = () => {
               
               <div className="mt-8 pt-6 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
                 <button className="text-xs font-bold text-tech-accent tracking-widest uppercase flex items-center gap-2">
-                  Learn More <span>→</span>
+                  Learn More <ArrowRight size={14} />
                 </button>
               </div>
             </motion.div>
