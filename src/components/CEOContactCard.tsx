@@ -64,6 +64,7 @@ export default function CEOContactCard() {
       `TEL;TYPE=CELL,VOICE;VALUE=uri:tel:${phoneValue}`,
       `EMAIL;TYPE=PREF,INTERNET:${emailValue}`,
       `URL:https://techverge.africa`,
+      `ADR;TYPE=WORK,PREF:;;;Kumasi;;;Ghana`,
       `X-SOCIALPROFILE;TYPE=whatsapp:https://wa.me/233591507448`,
       'END:VCARD'
     ].join('\r\n');
@@ -204,7 +205,7 @@ export default function CEOContactCard() {
                 </div>
                 <div className="text-left">
                   <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Location</p>
-                  <p className="text-sm font-medium text-white/90 mt-0.5">Accra, Ghana</p>
+                  <p className="text-sm font-medium text-white/90 mt-0.5">Kumasi, Ghana</p>
                 </div>
               </div>
             </div>
