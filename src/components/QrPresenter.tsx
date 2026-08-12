@@ -46,25 +46,30 @@ const QrPresenter: React.FC<QrPresenterProps> = ({
         const img = new Image();
         img.src = logoSrc;
         img.onload = () => {
-          const logoSize = size * 0.22; // 22% of QR code size
-          const x = (size - logoSize) / 2;
-          const y = (size - logoSize) / 2;
+          const maxLogoDim = size * 0.22; // 22% of QR code size
+          const bgRadius = maxLogoDim / 2 + 6;
 
-          // Save context for circular clip
           ctx.save();
 
           // Draw white background circle for logo
           ctx.fillStyle = '#ffffff';
           ctx.beginPath();
-          ctx.arc(size / 2, size / 2, logoSize / 2 + 4, 0, 2 * Math.PI);
+          ctx.arc(size / 2, size / 2, bgRadius, 0, 2 * Math.PI);
           ctx.fill();
 
-          // Clip to circle and draw logo
-          ctx.beginPath();
-          ctx.arc(size / 2, size / 2, logoSize / 2, 0, 2 * Math.PI);
-          ctx.clip();
-          ctx.drawImage(img, x, y, logoSize, logoSize);
+          // Calculate aspect ratio fit
+          const imgAspect = (img.naturalWidth || 1) / (img.naturalHeight || 1);
+          let drawW = maxLogoDim;
+          let drawH = maxLogoDim;
+          if (imgAspect > 1) {
+            drawH = maxLogoDim / imgAspect;
+          } else {
+            drawW = maxLogoDim * imgAspect;
+          }
+          const x = (size - drawW) / 2;
+          const y = (size - drawH) / 2;
 
+          ctx.drawImage(img, x, y, drawW, drawH);
           ctx.restore();
         };
       }
