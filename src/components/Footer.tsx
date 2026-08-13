@@ -60,7 +60,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Connect</h4>
             <ul className="flex flex-col gap-4">
-              {[{ name: 'Careers', href: '/#careers' }, { name: 'Community', href: '/#community' }, { name: 'Join', href: '/join' }].map((link) => (
+              {[{ name: 'Careers', href: '/careers' }, { name: 'Community', href: '/#community' }, { name: 'Join', href: '/join' }].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-gray-400 text-sm hover:text-tech-accent transition-colors">
                     {link.name}

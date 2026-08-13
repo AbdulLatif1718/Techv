@@ -12,7 +12,7 @@ const navLinks = [
   { name: 'Services', href: '/#services' },
   { name: 'Why Us', href: '/#why-us' },
   { name: 'Store', href: '/store' },
-  { name: 'Careers', href: '/#careers' },
+  { name: 'Careers', href: '/careers' },
   { name: 'Join', href: '/join' },
 ];
 
@@ -28,61 +28,75 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is active
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'py-4 glass-dark border-b border-white/5' : 'py-6 bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 group-hover:scale-105 transition-transform duration-300">
-            <Image 
-              src="/images/logo.png" 
-              alt="TechVerge Africa Logo" 
-              fill
-              className="object-contain"
-            />
-          </div>
-          <span className="text-xl font-extrabold tracking-tighter outfit group-hover:text-tech-accent transition-colors">
-            TechVerge <span className="text-tech-accent">Africa</span>
-          </span>
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-[13px] font-bold tracking-widest uppercase text-gray-400 hover:text-white transition-colors relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-tech-accent transition-all group-hover:w-full"></span>
-            </Link>
-          ))}
-        </div>
-
-        {/* Action Button */}
-        <div className="hidden lg:block">
-          <Link href="/join">
-            <button aria-label="Become a TechVerger" className="px-6 py-2.5 rounded-full border border-tech-accent/20 text-tech-accent text-xs tracking-widest uppercase font-bold glass hover:bg-tech-accent hover:text-tech-dark transition-all duration-500">
-              Become a TechVerger
-            </button>
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          isScrolled ? 'py-4 glass-dark border-b border-white/5' : 'py-6 bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-10 h-10 group-hover:scale-105 transition-transform duration-300">
+              <Image 
+                src="/images/logo.png" 
+                alt="TechVerge Africa Logo" 
+                fill
+                className="object-contain"
+              />
+            </div>
+            <span className="text-xl font-extrabold tracking-tighter outfit group-hover:text-tech-accent transition-colors">
+              TechVerge <span className="text-tech-accent">Africa</span>
+            </span>
           </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-[13px] font-bold tracking-widest uppercase text-gray-400 hover:text-white transition-colors relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-tech-accent transition-all group-hover:w-full"></span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Action Button */}
+          <div className="hidden lg:block">
+            <Link href="/join">
+              <button aria-label="Become a TechVerger" className="px-6 py-2.5 rounded-full border border-tech-accent/20 text-tech-accent text-xs tracking-widest uppercase font-bold glass hover:bg-tech-accent hover:text-tech-dark transition-all duration-500">
+                Become a TechVerger
+              </button>
+            </Link>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            className="lg:hidden text-white p-2 transition-transform active:scale-90"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="lg:hidden text-white p-2 transition-transform active:scale-90"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Side Bar */}
+      {/* Mobile Menu Side Bar - Rendered outside <nav> to prevent backdrop-filter stacking context bugs */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
@@ -92,7 +106,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="fixed inset-0 z-40 bg-black/80 backdrop-blur-md lg:hidden"
+              className="fixed inset-0 z-[90] bg-black/80 backdrop-blur-md lg:hidden"
             />
 
             {/* Sidebar Content */}
@@ -106,7 +120,7 @@ const Navbar = () => {
                 stiffness: 200,
                 mass: 0.8
               }}
-              className="fixed top-0 right-0 h-full w-[85%] max-w-sm z-50 bg-[#0a0a0a] border-l border-white/5 lg:hidden flex flex-col"
+              className="fixed top-0 right-0 h-full w-[85%] max-w-sm z-[100] bg-[#0a0a0a] border-l border-white/5 lg:hidden flex flex-col shadow-2xl"
             >
               <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none"></div>
               
@@ -169,7 +183,7 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 };
 
