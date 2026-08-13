@@ -22,11 +22,11 @@ const PulsingCore = () => {
     <mesh ref={mesh}>
       <icosahedronGeometry args={[1, 15]} />
       <meshStandardMaterial 
-        color="#14b8c6" 
+        color="#1D64EC" 
         wireframe 
         transparent 
         opacity={0.3} 
-        emissive="#14b8c6"
+        emissive="#1D64EC"
         emissiveIntensity={0.5}
       />
     </mesh>
@@ -48,7 +48,7 @@ const DataRings = () => {
       {[...Array(3)].map((_, i) => (
         <mesh key={i} rotation={[Math.random() * Math.PI, Math.random() * Math.PI, 0]}>
           <torusGeometry args={[1.5 + i * 0.2, 0.01, 16, 100]} />
-          <meshBasicMaterial color="#14b8c6" transparent opacity={0.1 - i * 0.02} />
+          <meshBasicMaterial color="#1D64EC" transparent opacity={0.1 - i * 0.02} />
         </mesh>
       ))}
     </group>
@@ -61,7 +61,7 @@ const TechVisual = () => {
       <Canvas>
         <PerspectiveCamera makeDefault position={[0, 0, 5]} />
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#14b8c6" />
+        <pointLight position={[10, 10, 10]} intensity={1} color="#1D64EC" />
         
         <Float speed={2} rotationIntensity={1} floatIntensity={1}>
           <PulsingCore />

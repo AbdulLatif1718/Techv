@@ -5,7 +5,9 @@
 :root {
   --background: #121212;
   --foreground: #e0e0e0;
-  --accent: #14b8c6;
+  --accent: #1D64EC;
+  --accent-green: #22C55E;
+  --accent-orange: #FF6D00;
 }
 
 * {

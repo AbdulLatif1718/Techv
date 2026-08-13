@@ -77,7 +77,7 @@ const QrPresenter: React.FC<QrPresenterProps> = ({
   }, [value, size, logoSrc]);
 
   return (
-    <div className="relative p-5 bg-white rounded-[32px] flex items-center justify-center border border-white/10 shadow-[0_0_40px_rgba(20,184,198,0.25)] transition-all duration-500 hover:scale-[1.03] group">
+    <div className="relative p-5 bg-white rounded-[32px] flex items-center justify-center border border-white/10 shadow-[0_0_40px_rgba(29,100,236,0.25)] transition-all duration-500 hover:scale-[1.03] group">
       {/* Outer ambient glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-tech-accent to-tech-glow opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500 rounded-[32px] -z-10"></div>
       <canvas ref={canvasRef} className="rounded-2xl" />

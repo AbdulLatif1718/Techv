@@ -14,8 +14,11 @@ const config: Config = {
         tech: {
           dark: "#121212",
           deep: "#0a0a0a",
-          accent: "#14b8c6", // Muted Teal
-          glow: "#2563eb",   // Professional Blue
+          accent: "#1D64EC", // Brand Electric Blue
+          blue: "#1D64EC",   // Logo Blue
+          green: "#22C55E",  // Logo Green
+          orange: "#FF6D00", // Logo Orange
+          glow: "#0066FF",   // Electric Blue Glow
           muted: "#2a2a2a",
         },
       },

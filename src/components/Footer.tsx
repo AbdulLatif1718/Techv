@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { X, Globe, Code2, Camera, Send } from 'lucide-react';
+import { X, Globe, Code2, Camera, Send, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   const socials = [
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Platform</h4>
             <ul className="flex flex-col gap-4">
@@ -67,6 +67,33 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Contact Us</h4>
+            <ul className="flex flex-col gap-4 text-sm text-gray-400">
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="text-tech-accent shrink-0 mt-0.5" />
+                <span>Kumasi, Ghana</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={18} className="text-tech-accent shrink-0" />
+                <a href="mailto:info@techverge.africa" className="hover:text-tech-accent transition-colors">
+                  info@techverge.africa
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone size={18} className="text-tech-accent shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+233591507448" className="hover:text-tech-accent transition-colors font-mono">
+                    +233 59 150 7448
+                  </a>
+                  <a href="tel:+233249819285" className="hover:text-tech-accent transition-colors font-mono">
+                    +233 24 981 9285
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
