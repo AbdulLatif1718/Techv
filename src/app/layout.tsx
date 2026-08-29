@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import BannerAwareLayout from '@/components/BannerAwareLayout';
 import { CartProvider } from '@/context/CartContext';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -50,8 +51,10 @@ export default function RootLayout({
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-inter antialiased bg-tech-dark text-white`}>
         <CartProvider>
           <div className="relative min-h-screen overflow-x-hidden">
-            <Navbar />
-            <main>{children}</main>
+            <BannerAwareLayout>
+              <Navbar />
+              <main>{children}</main>
+            </BannerAwareLayout>
             <Footer />
           </div>
         </CartProvider>

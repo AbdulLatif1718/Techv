@@ -47,7 +47,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Platform</h4>
             <ul className="flex flex-col gap-4">
-              {[{ name: 'About', href: '/#about' }, { name: 'Services', href: '/#services' }, { name: 'Research', href: '/#services' }].map((link) => (
+              {[{ name: 'About', href: '/#about' }, { name: 'Services', href: '/#services' }, { name: 'Research', href: '/research' }].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-gray-400 text-sm hover:text-tech-accent transition-colors">
                     {link.name}

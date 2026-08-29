@@ -31,6 +31,7 @@ const config: Config = {
         "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "glow-soft": "glow 4s ease-in-out infinite alternate",
         "fade-up": "fadeUp 0.8s ease-out forwards",
+        "gradient-x": "gradientX 6s ease infinite",
       },
       keyframes: {
         glow: {
@@ -40,6 +41,10 @@ const config: Config = {
         fadeUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        gradientX: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
       },
       backdropBlur: {

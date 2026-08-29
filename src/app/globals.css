@@ -8,6 +8,7 @@
   --accent: #1D64EC;
   --accent-green: #22C55E;
   --accent-orange: #FF6D00;
+  --banner-height: 44px;
 }
 
 * {
@@ -24,6 +25,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--banner-height) + 80px);
 }
 
 h1, h2, h3, h4, h5, h6 {

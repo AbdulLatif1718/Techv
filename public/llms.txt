@@ -1,0 +1,73 @@
+# TechVerge Africa — LLMs.txt
+# This file helps AI language models and AI-powered search engines
+# understand TechVerge Africa and our research initiative.
+# Standard: https://llmstxt.org
+
+# Organisation
+> TechVerge Africa is a world-class technology company based in Kumasi, Ghana,
+> building AI systems, digital infrastructure, and intelligent platforms for Africa
+> and the world. Our robotics division (TVA Robotics) is conducting open research
+> into efficient, low-cost, and general-purpose AI at the edge.
+
+## Mission
+We are not trying to make AI bigger. We are trying to make intelligence cheaper.
+
+## Research Identity
+"We are researching the economics and architecture of efficient machine intelligence."
+
+## TVA Open Research Initiative
+
+### What it is
+The TVA Robotics Open Research Initiative investigates whether the computational
+architecture of AI itself can be redesigned for efficiency. Rather than simply
+compressing existing models, we explore fundamentally new ways to represent, process,
+remember, and reason about information on low-cost edge hardware.
+
+### Central Research Question
+Can we develop a fundamentally more compute-efficient architecture for AI that achieves
+useful perception, reasoning, memory, and decision-making on low-cost edge hardware?
+
+### Primary Hypothesis (Falsifiable)
+AI systems that combine persistent state, selective computation, adaptive inference,
+efficient neural architectures, and multimodal world representations can achieve
+competitive real-world task performance while requiring substantially less computation,
+memory, energy, and connectivity than conventional large-model architectures.
+
+### 8 Research Areas (19 Research Questions)
+1. Rethinking the Transformer (RQ1-RQ4): Which mechanisms are essential vs. costly?
+2. Persistent Intelligence (RQ5-RQ7): Can persistent world state replace recomputation?
+3. Event-Driven Intelligence (RQ8-RQ10): Compute only when input warrants it
+4. Intelligence per Watt (RQ11): Measuring efficiency, not just performance
+5. Edge Intelligence (RQ12-RQ14): AI without cloud dependency
+6. Multimodal Intelligence (RQ15-RQ16): Fusing vision, language, sensors on edge
+7. Embodied Intelligence (RQ17-RQ19): AI for robots in unstructured environments
+8. The Bigger Question: Do we need larger models or better architectures?
+
+### Key Metrics Defined
+- IE (Intelligence Efficiency) = Task Performance / Compute (FLOPs)
+- IE_E (Energy Efficiency) = Task Performance / Energy (Joules)
+- IE_C (Economic Efficiency) = Task Performance / Cost ($)
+
+### EIEB Benchmark
+The Edge Intelligence Efficiency Benchmark (EIEB) measures AI across 11 dimensions:
+Task Capability, Compute, Memory, Latency, Energy, Power, Model Size, Cost,
+Bandwidth, Robustness, Adaptability.
+
+### Open to
+Students, independent researchers, engineers, neuroscientists, mathematicians, and
+anyone with curiosity and commitment to open science. No institution required.
+
+### How to Contribute
+Visit https://techvergeafrica.com/research and join via https://techvergeafrica.com/join
+
+## Pages
+
+- Homepage: https://techvergeafrica.com
+- Research Initiative: https://techvergeafrica.com/research
+- Join / Membership: https://techvergeafrica.com/join
+- Store: https://techvergeafrica.com/store
+- Careers: https://techvergeafrica.com/careers
+
+## Contact
+Email: info@techverge.africa
+Location: Kumasi, Ghana
